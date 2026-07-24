@@ -1,0 +1,336 @@
+<title>FileThat — Self Assessment Video Brief</title>
+<style>
+  :root {
+    --paper: #fbfcfb;
+    --ink: #182119;
+    --muted: #5c6b60;
+    --accent: #047857;
+    --accent-ink: #065f46;
+    --line: #dee7e0;
+    --card: #f1f6f2;
+    --chip-bg: #e3f0e8;
+    --mono-bg: #eef3ef;
+    --warn-bg: #fdf6e7;
+    --warn-line: #e8d9ae;
+    --warn-ink: #6b5518;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #141a15;
+      --ink: #e6ede7;
+      --muted: #98a89c;
+      --accent: #3fbf8f;
+      --accent-ink: #6fd7ae;
+      --line: #28322a;
+      --card: #1a221b;
+      --chip-bg: #1f2f24;
+      --mono-bg: #1c261e;
+      --warn-bg: #2a2417;
+      --warn-line: #4d411f;
+      --warn-ink: #d9bd6a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #141a15;
+    --ink: #e6ede7;
+    --muted: #98a89c;
+    --accent: #3fbf8f;
+    --accent-ink: #6fd7ae;
+    --line: #28322a;
+    --card: #1a221b;
+    --chip-bg: #1f2f24;
+    --mono-bg: #1c261e;
+    --warn-bg: #2a2417;
+    --warn-line: #4d411f;
+    --warn-ink: #d9bd6a;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfb;
+    --ink: #182119;
+    --muted: #5c6b60;
+    --accent: #047857;
+    --accent-ink: #065f46;
+    --line: #dee7e0;
+    --card: #f1f6f2;
+    --chip-bg: #e3f0e8;
+    --mono-bg: #eef3ef;
+    --warn-bg: #fdf6e7;
+    --warn-line: #e8d9ae;
+    --warn-ink: #6b5518;
+  }
+
+  html { background: var(--paper); }
+  body {
+    font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.55;
+    margin: 0;
+    padding: 3rem 1.25rem 5rem;
+  }
+  .sheet { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 700;
+    margin: 0 0 0.6rem;
+  }
+  h1 {
+    font-size: 1.85rem;
+    line-height: 1.2;
+    margin: 0 0 0.5rem;
+    text-wrap: balance;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .standfirst { color: var(--muted); margin: 0 0 1.6rem; max-width: 38rem; }
+
+  .specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+    gap: 0.75rem;
+    margin: 0 0 2.4rem;
+  }
+  .spec {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 0.7rem 0.9rem;
+  }
+  .spec dt {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0 0 0.15rem;
+    font-weight: 600;
+  }
+  .spec dd { margin: 0; font-weight: 600; font-variant-numeric: tabular-nums; }
+
+  h2 {
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    margin: 2.6rem 0 0.9rem;
+    padding-top: 1.4rem;
+    border-top: 1px solid var(--line);
+    font-weight: 700;
+  }
+  h2 .sec { color: var(--accent); margin-right: 0.5rem; }
+  p { margin: 0 0 0.9rem; max-width: 40rem; }
+  .quiet { color: var(--muted); font-size: 0.9rem; }
+
+  ul.plain { margin: 0 0 1rem; padding-left: 1.2rem; }
+  ul.plain li { margin-bottom: 0.45rem; max-width: 38rem; }
+
+  /* Beats */
+  .beat {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    margin: 0 0 1.1rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem 0.6rem;
+    background: var(--card);
+    border-bottom: 1px solid var(--line);
+  }
+  .beat-time {
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--accent-ink);
+    background: var(--chip-bg);
+    border-radius: 4px;
+    padding: 0.1rem 0.45rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1rem; }
+  .beat-words {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 0.85rem 1rem 1rem; display: grid; gap: 0.75rem; }
+  .row { display: grid; grid-template-columns: 4.2rem 1fr; gap: 0.75rem; }
+  .row-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-weight: 700;
+    padding-top: 0.2rem;
+  }
+  .screen {
+    font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, monospace;
+    font-size: 0.82rem;
+    background: var(--mono-bg);
+    border: 1px solid var(--line);
+    border-radius: 5px;
+    padding: 0.55rem 0.7rem;
+    overflow-x: auto;
+    line-height: 1.5;
+  }
+  .vo { margin: 0; max-width: 38rem; }
+  .vo::before { content: "\201C"; color: var(--accent); font-weight: 700; }
+  .vo::after { content: "\201D"; color: var(--accent); font-weight: 700; }
+
+  /* Tables */
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 0.55rem 0.85rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th {
+    font-size: 0.7rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--card);
+    font-weight: 700;
+  }
+  tr:last-child td { border-bottom: none; }
+  td.mono, .mono { font-family: ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace; font-size: 0.82rem; }
+
+  .callout {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-line);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    color: var(--warn-ink);
+    margin: 1rem 0;
+    max-width: 42rem;
+  }
+  .callout strong { color: inherit; }
+
+  footer {
+    margin-top: 3rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+</style>
+
+<div class="sheet">
+  <p class="eyebrow">FileThat · Video brief · For quotation</p>
+  <h1>Your Self Assessment year in FileThat</h1>
+  <p class="standfirst">A screen-recorded walkthrough for existing FileThat users: the full Making Tax Digital Self Assessment journey — four quarterly updates through to the Final Declaration. Voiceover script, screens and click paths are below; all demo data will be staged and ready before recording.</p>
+
+  <dl class="specs">
+    <div class="spec"><dt>Target runtime</dt><dd>≈ 2:55</dd></div>
+    <div class="spec"><dt>Voiceover</dt><dd>≈ 440 words</dd></div>
+    <div class="spec"><dt>Beats</dt><dd>7</dd></div>
+    <div class="spec"><dt>Format</dt><dd>Screen capture + VO</dd></div>
+    <div class="spec"><dt>Audience</dt><dd>Signed-up users</dd></div>
+    <div class="spec"><dt>Short cut available</dt><dd>≈ 2:10</dd></div>
+  </dl>
+
+  <h2><span class="sec">01</span>Purpose &amp; tone</h2>
+  <p>This is a tutorial, not an advert. The viewer has an account and wants to know <em>what they have to do and when</em>. Tone matches FileThat's voice: plain-spoken, honest, reassuring — closer to a knowledgeable friend than a corporate explainer. British English throughout ("HMRC", "sole trader").</p>
+  <p class="quiet">The script is written to be read as-is at a natural pace (~150 wpm). Light rewording to suit the presenter's voice is fine; the two lines marked <strong>keep verbatim</strong> carry compliance meaning and should stay as written.</p>
+
+  <h2><span class="sec">02</span>The script — beat by beat</h2>
+
+  <div class="beat">
+    <div class="beat-head"><span class="beat-time">0:00–0:30</span><span class="beat-title">1 · The shape of the year</span><span class="beat-words">~72 words</span></div>
+    <div class="beat-body">
+      <div class="row"><div class="row-label">Screen</div><div class="screen">Self Assessment → Your Filing Deadlines — slow pan down the obligations table (quarters, due dates, met/open) → cut to Filing Checklist</div></div>
+      <div class="row"><div class="row-label">VO</div><p class="vo">Under Making Tax Digital, your Self Assessment year has a simple shape: four quarterly updates, then one final declaration to sign the year off. Your Filing Deadlines shows every quarter and its due date — met or still open — and the Filing Checklist tracks where you are in the journey at any moment. If you're ever unsure what's next, start at these two pages.</p></div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="beat-head"><span class="beat-time">0:30–1:10</span><span class="beat-title">2 · A quarterly update, from your records</span><span class="beat-words">~95 words</span></div>
+    <div class="beat-body">
+      <div class="row"><div class="row-label">Screen</div><div class="screen">Your Filing Deadlines → open the due quarter → form loads → HOLD on the "Pre-filled from digital records" banner (fields visibly locked) → scroll Income and Expenses tabs → Submit → success state</div></div>
+      <div class="row"><div class="row-label">VO</div><p class="vo">When a quarter's due, open it — and notice you're not typing numbers in. The figures are filled in from your digital records, and the fields are read-only. That's deliberate, and it's what HMRC means by digital record-keeping: what you submit <em>is</em> your records. Need to change a figure? Change the record, and the form follows. And because updates are cumulative — each one covers the year so far — a correction simply rolls into your next update. Review, submit, done.</p></div>
+      <div class="row"><div class="row-label">Note</div><p class="quiet" style="margin:0">"The fields are read-only… what you submit is your records" — <strong>keep verbatim</strong>. The on-screen banner says the same thing; let the camera linger on it.</p></div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="beat-head"><span class="beat-time">1:10–1:30</span><span class="beat-title">3 · Check what you owe, any time</span><span class="beat-words">~45 words</span></div>
+    <div class="beat-body">
+      <div class="row"><div class="row-label">Screen</div><div class="screen">Self Assessment → Calculate &amp; Submit → Calculation Type: "In Year" → trigger → calculation summary appears</div></div>
+      <div class="row"><div class="row-label">VO</div><p class="vo">After any update, you can ask HMRC for an in-year calculation — a running estimate of the year's tax so far. No more waiting until January to find out the damage. Little and often, no surprises.</p></div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="beat-head"><span class="beat-time">1:30–2:05</span><span class="beat-title">4 · Everything that isn't day-to-day trading</span><span class="beat-words">~85 words</span></div>
+    <div class="beat-body">
+      <div class="row"><div class="row-label">Screen</div><div class="screen">Self Assessment → Extra Details — slow scroll through the menu tree, pacing the scroll to the buckets as they're spoken (viewers pause here to find their item)</div></div>
+      <div class="row"><div class="row-label">VO</div><p class="vo">Before you finalise your year, this is where everything else goes — anything that isn't your day-to-day trading. Other income: employment, savings interest, dividends, state benefits. Reliefs: pension contributions, charitable giving, investments. CIS deductions if you're in construction. Capital gains if you've sold something. You don't need most of these — find the ones that apply to you, and any time before your final declaration is the right time.</p></div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="beat-head"><span class="beat-time">2:05–2:20</span><span class="beat-title">5 · Year-end allowances and adjustments</span><span class="beat-words">~40 words</span></div>
+    <div class="beat-body">
+      <div class="row"><div class="row-label">Screen</div><div class="screen">Self Assessment → Year-End Allowances</div></div>
+      <div class="row"><div class="row-label">VO</div><p class="vo">After your final quarter, if you have capital allowances or accounting adjustments, they're made once, here. Plenty of people will have nothing to do on this page — it's there if the year needs it.</p></div>
+      <div class="row"><div class="row-label">Note</div><p class="quiet" style="margin:0">This page is optional by design for many users — keep the reassuring tone; don't make it sound like a required step.</p></div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="beat-head"><span class="beat-time">2:20–2:50</span><span class="beat-title">6 · Signing off the year</span><span class="beat-words">~80 words</span></div>
+    <div class="beat-body">
+      <div class="row"><div class="row-label">Screen</div><div class="screen">Calculate &amp; Submit → Calculation Type: "Intent To Finalise" → review returned calculation → Final Declaration dialog → confirm → cut to Proof of Submission (receipt visible)</div></div>
+      <div class="row"><div class="row-label">VO</div><p class="vo">Then the finale. Trigger an Intent to Finalise — think of it as the dress rehearsal: HMRC checks everything and returns your final figures. Review them, and when you're happy, submit your Final Declaration. That's you signing off the year — the Making Tax Digital equivalent of filing your return. Every step gets a receipt under Proof of Submission: filed, and proven.</p></div>
+      <div class="row"><div class="row-label">Note</div><p class="quiet" style="margin:0">"That's you signing off the year — the Making Tax Digital equivalent of filing your return" — <strong>keep verbatim</strong>.</p></div>
+    </div>
+  </div>
+
+  <div class="beat">
+    <div class="beat-head"><span class="beat-time">2:50–2:55</span><span class="beat-title">7 · Closer</span><span class="beat-words">~40 words</span></div>
+    <div class="beat-body">
+      <div class="row"><div class="row-label">Screen</div><div class="screen">Filing Checklist — everything complete/green</div></div>
+      <div class="row"><div class="row-label">VO</div><p class="vo">If plans change after you've declared, Intent to Amend reopens the year while HMRC's window is open. But that's another video. Four updates, one declaration — that's Self Assessment in FileThat.</p></div>
+    </div>
+  </div>
+
+  <h2><span class="sec">03</span>Shorter cut (≈ 2:10), if preferred</h2>
+  <ul class="plain">
+    <li><strong>Drop beat 3</strong> entirely; fold one line into beat 6: "you can also request in-year estimates any time".</li>
+    <li><strong>Halve beat 4's list</strong> to: "other income, reliefs, CIS deductions, capital gains".</li>
+    <li><strong>Trim beat 7</strong> to the final sentence only ("Four updates, one declaration…").</li>
+    <li>Beats 1, 2 and 6 are the video — please don't trim those.</li>
+  </ul>
+  <p class="quiet">Happy to take a price on both cuts.</p>
+
+  <h2><span class="sec">04</span>What will be ready before recording</h2>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Item</th><th>State at hand-off</th></tr>
+      <tr><td>Demo account &amp; company</td><td>Logged-in demo user with a self-employment business; realistic (non-real) data</td></tr>
+      <tr><td>Obligations table</td><td>Shows the year's quarters with at least one open, due quarter to file on camera</td></tr>
+      <tr><td>Digital records</td><td>Populated so the quarterly form prefills and shows the read-only banner</td></tr>
+      <tr><td>Calculations</td><td>In Year and Intent to Finalise both return real-looking figures on demand</td></tr>
+      <tr><td>Tax year selector</td><td>Set to 2025–26 throughout; no changes needed mid-recording</td></tr>
+      <tr><td>Environment</td><td>All against HMRC's test environment — nothing on screen is a live submission</td></tr>
+    </table>
+  </div>
+
+  <div class="callout"><strong>Script status: locked.</strong> All screens and wording in this document match the current product — quote and record against it as written.</div>
+
+  <h2><span class="sec">05</span>Delivery</h2>
+  <ul class="plain">
+    <li>1080p minimum (1440p welcome), 16:9, MP4.</li>
+    <li>Clean VO mix; no music bed required (add a light one if it's included in your rate).</li>
+    <li>Please deliver the VO as a separate stem if possible — makes future re-cuts cheaper for both of us.</li>
+    <li>Captions file (SRT) appreciated.</li>
+  </ul>
+
+  <footer>FileThat · Self Assessment walkthrough brief · July 2026 — questions and quote to Ritchie.</footer>
+</div>

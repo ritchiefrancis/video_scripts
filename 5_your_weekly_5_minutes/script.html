@@ -1,0 +1,325 @@
+<title>Video 5 — Your Weekly 5 Minutes · Script</title>
+<style>
+  :root {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131a22;
+      --ink: #e4ebf2;
+      --muted: #93a4b4;
+      --accent: #7aa7f5;
+      --vo-ink: #6fd3b4;
+      --rule: #2a3644;
+      --card: #1a232e;
+      --chip-bg: #223043;
+      --vo-bg: #16261f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131a22;
+    --ink: #e4ebf2;
+    --muted: #93a4b4;
+    --accent: #7aa7f5;
+    --vo-ink: #6fd3b4;
+    --rule: #2a3644;
+    --card: #1a232e;
+    --chip-bg: #223043;
+    --vo-bg: #16261f;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .meta span {
+    background: var(--chip-bg);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .brief {
+    border-left: 3px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+  .brief strong { color: var(--ink); }
+
+  .beat {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1.05rem; }
+  .beat-pace {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 1rem 1.25rem 1.25rem; }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  .screen { margin: 0 0 1rem; font-size: 0.95rem; }
+  .screen ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+  .screen li { margin: 0.15rem 0; }
+  .vo {
+    background: var(--vo-bg);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--vo-ink);
+    margin: 0;
+  }
+  .note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note strong { color: var(--ink); }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .footer-notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-notes ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .footer-notes li { margin: 0.3rem 0; }
+  .locked {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    margin: 1rem 0 0;
+  }
+  .locked p { margin: 0.3rem 0; }
+</style>
+
+<main>
+  <p class="eyebrow">FileThat video scripts · Tier 1 · Video 5 of 9</p>
+  <h1>Your Weekly 5 Minutes</h1>
+  <div class="meta">
+    <span>Target 1:00–1:30</span>
+    <span>VO ≈ 195 words</span>
+    <span>The habit video</span>
+    <span>British English</span>
+  </div>
+  <p class="brief">
+    <strong>The brief:</strong> the habit video — snap a receipt, log a job payment, log your
+    mileage, and the quarterly update fills itself in. This is the video that makes someone
+    <strong>self-sufficient</strong>: the message is little-and-often, not software features.
+    Keep it warm and unhurried. The audience is <strong>non-tax-savvy</strong>; no jargon.
+    <br><br>
+    <strong>Merge option:</strong> the catalogue offers #5 and #11 (Receipts) as one combined
+    video — if we go that way, beat 2 below expands into the full receipts walkthrough and the
+    target becomes ~2:00. This script stands alone as written.
+  </p>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:00–0:12</span>
+      <span class="beat-title">The hook — little and often</span>
+      <span class="beat-pace">27 words · ~12s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Open on the problem, not the product — the January shoebox of crumpled receipts, or a
+        late-night laptop and a calculator. Your creative call. Cut to a phone propped on a van
+        dashboard or next to a mug of tea: the five-minute version of the same job.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Nobody wants to spend January drowning in a shoebox of receipts. So FileThat asks for
+        something much smaller: five minutes, once a week. Here's what that looks like.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:12–0:33</span>
+      <span class="beat-title">Snap a receipt</span>
+      <span class="beat-pace">47 words · ~21s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Real-world to product in one motion (I'll record the product shots):
+        <ul>
+          <li>Phone camera over a builders' merchant receipt → photo taken</li>
+          <li>Receipts page → upload the photo → brief processing moment</li>
+          <li>The details appear, already read from the receipt → convert to a digital record</li>
+          <li>Hold on the confirmation: it's now a digital record, receipt image attached</li>
+        </ul>
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Bought materials? Snap the receipt with your phone and upload it. FileThat reads the
+        details off it for you — you just check them and convert it. That's the receipt saved
+        as a digital record, in the right category, with the photo attached as your proof.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:33–0:50</span>
+      <span class="beat-title">Log a job payment</span>
+      <span class="beat-pace">39 words · ~17s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Income &amp; Expenditure ledger → <strong>Add Entry</strong> → Income selected →
+        description (e.g. <em>"Kitchen refit — final payment"</em>), amount, category →
+        save → the running totals tick up.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Been paid for a job? Open your ledger and add the entry — what it was, how much, done.
+        Income on one side, expenses on the other, with running totals so you always know
+        where you stand.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:50–1:03</span>
+      <span class="beat-title">Log your mileage</span>
+      <span class="beat-pace">31 words · ~13s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Mileage page → <strong>Add Trip</strong> → journey and miles entered → save →
+        the summary updates with the amount you can claim.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        And if you drove to the job, log the trip. Put in the journey and the miles —
+        FileThat works out what you can claim, and keeps the record for you.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">1:03–1:26</span>
+      <span class="beat-title">The payoff — the quarter fills itself in</span>
+      <span class="beat-pace">51 words · ~23s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        A calendar flicks forward to quarter end → the quarterly update screen with the figures
+        <strong>already filled in</strong> from the records we just made (read-only) → a slow
+        scroll down the completed figures → end card: FileThat logo + <strong>filethat.co.uk</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        That's the whole habit. Five minutes with a cup of tea, once a week. Because here's the
+        payoff: when the quarter ends, your update for HMRC is already filled in from those
+        records. You just review it and press submit. Little and often — and your tax return
+        practically files itself.
+      </p>
+      <p class="note"><strong>Footage note:</strong> the quarterly-update shot here is the same
+      staged screen as Video 1's beat 3 and Video 7 — record once, reuse. If this video is cut
+      before that screen is staged, beat 5 works ending on the calendar + a still of the review
+      screen.</p>
+    </div>
+  </section>
+
+  <h2>Fixed claims — please don't paraphrase these</h2>
+  <div class="locked">
+    <p>· "<strong>Practically</strong> files itself" — keep the hedge word. The review-and-submit step is always in frame and in the VO; never promise it files itself without review.</p>
+    <p>· "FileThat reads the details off it" — do not strengthen to "does your bookkeeping for you" or "no data entry ever".</p>
+    <p>· "Works out what you can claim" (mileage) — keep as written; no specific rates or £ amounts in the VO.</p>
+    <p>· No pricing in this video. If an edit wants a price line, lift the exact wording from Video 1 ("keeping your records is free") — nothing new.</p>
+  </div>
+
+  <h2>Practicalities</h2>
+  <div class="footer-notes">
+    <ul>
+      <li>1080p minimum, 16:9, MP4. Clean voiceover mix; VO as a separate stem if possible; SRT captions appreciated.</li>
+      <li>Total VO ≈ 195 words — lands around 1:20 at a relaxed pace, comfortably inside the 1:00–1:30 target.</li>
+      <li>All demo screens and data will be staged and recorded by me before the session; the phone-in-hand shots (receipt snap, van dashboard) are yours to film or source.</li>
+    </ul>
+  </div>
+</main>

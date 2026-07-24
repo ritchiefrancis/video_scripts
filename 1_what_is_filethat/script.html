@@ -1,0 +1,322 @@
+<title>Video 1 — What is FileThat? · Script</title>
+<style>
+  :root {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131a22;
+      --ink: #e4ebf2;
+      --muted: #93a4b4;
+      --accent: #7aa7f5;
+      --vo-ink: #6fd3b4;
+      --rule: #2a3644;
+      --card: #1a232e;
+      --chip-bg: #223043;
+      --vo-bg: #16261f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131a22;
+    --ink: #e4ebf2;
+    --muted: #93a4b4;
+    --accent: #7aa7f5;
+    --vo-ink: #6fd3b4;
+    --rule: #2a3644;
+    --card: #1a232e;
+    --chip-bg: #223043;
+    --vo-bg: #16261f;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .meta span {
+    background: var(--chip-bg);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .brief {
+    border-left: 3px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+  .brief strong { color: var(--ink); }
+
+  .beat {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1.05rem; }
+  .beat-pace {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 1rem 1.25rem 1.25rem; }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  .screen { margin: 0 0 1rem; font-size: 0.95rem; }
+  .screen ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+  .screen li { margin: 0.15rem 0; }
+  .vo {
+    background: var(--vo-bg);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--vo-ink);
+    margin: 0;
+  }
+  .note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note strong { color: var(--ink); }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .footer-notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-notes ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .footer-notes li { margin: 0.3rem 0; }
+  .locked {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    margin: 1rem 0 0;
+  }
+  .locked p { margin: 0.3rem 0; }
+</style>
+
+<main>
+  <p class="eyebrow">FileThat video scripts · Tier 1 · Video 1 of 9</p>
+  <h1>What is FileThat?</h1>
+  <div class="meta">
+    <span>Target 1:30–2:00</span>
+    <span>VO ≈ 240 words</span>
+    <span>Public welcome-page video</span>
+    <span>British English</span>
+  </div>
+  <p class="brief">
+    <strong>The brief:</strong> the high-level pitch for people who have never seen the product —
+    keep digital records → file quarterly to HMRC → pay per filing, no subscription.
+    The audience is <strong>non-tax-savvy</strong>: friendly, plain-spoken, no jargon.
+    Screen directions below are the lead I'll record; there's deliberate <strong>room for your own
+    creative treatment</strong> in the opening and closing beats — the voiceover copy and the
+    claims in it are fixed.
+  </p>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:00–0:17</span>
+      <span class="beat-title">The hook — why this exists</span>
+      <span class="beat-pace">44 words · ~17s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Open on something human, not the product — a tradesperson's van, a pile of receipts,
+        a January calendar. Your creative call. End the beat on the FileThat logo or homepage.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        If you work for yourself, or you rent out a property, HMRC now wants updates four times
+        a year — not one big return in January. It's called Making Tax Digital, and it sounds
+        like more work. FileThat is built to make it less.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:17–0:38</span>
+      <span class="beat-title">Keep simple records</span>
+      <span class="beat-pace">49 words · ~20s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Quick cuts through the record-keeping surfaces (I'll record these):
+        <ul>
+          <li>Snapping a receipt on a phone → it appears as a digital record</li>
+          <li>Adding an income entry (a job payment)</li>
+          <li>Logging a mileage journey</li>
+          <li>Uploading a bank statement → rows auto-categorised</li>
+        </ul>
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Here's the whole idea. Through the year, you keep simple digital records. Snap a receipt
+        with your phone. Log a job payment. Track your mileage. Or upload a bank statement and
+        let FileThat sort it into categories for you. A few minutes a week is genuinely all it takes.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:38–1:02</span>
+      <span class="beat-title">File straight to HMRC</span>
+      <span class="beat-pace">53 words · ~22s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        The quarterly update screen: figures already filled in from the records (read-only),
+        scroll to review, press <strong>Submit</strong>, land on the HMRC success confirmation.
+        Hold briefly on the confirmation — it's the payoff shot.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Then, once a quarter, FileThat turns those records into your update for HMRC. The figures
+        are already filled in from what you've logged — you just review them and press submit.
+        FileThat connects directly to HMRC, and it's officially recognised for Making Tax Digital,
+        so what you send is exactly what they expect.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">1:02–1:24</span>
+      <span class="beat-title">No subscription — pay per filing</span>
+      <span class="beat-pace">50 words · ~21s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        The pricing message from the homepage: <em>"£3.99 per filing · No subscription"</em> and the
+        comparison line (FreeAgent £228 · Xero £180 · QuickBooks £144 per year). Simple text cards
+        are fine here if you'd rather build a graphic than use the site.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        And here's what makes FileThat different: there's no subscription. Keeping your records is
+        free. You only pay when you actually file — three pounds ninety-nine a filing, and you're
+        only charged when the filing succeeds. Most people will spend around twenty pounds a year.
+        The big-name apps charge that every month.
+      </p>
+      <p class="note"><strong>Read note:</strong> say the price as "three pounds ninety-nine", not "three ninety-nine".</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">1:24–1:42</span>
+      <span class="beat-title">Close — try it free</span>
+      <span class="beat-pace">39 words · ~16s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Sign-up page, then your end card: FileThat logo + <strong>filethat.co.uk</strong>.
+        Creative treatment welcome on the end card.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        You can try it without spending a penny — sign up free and you'll get four filing credits
+        to start you off. FileThat. Keep your records. File your taxes. Pay per filing, not per
+        month. Find us at filethat.co.uk.
+      </p>
+    </div>
+  </section>
+
+  <h2>Fixed claims — please don't paraphrase these</h2>
+  <div class="locked">
+    <p>· "£3.99 per filing" and "no subscription" — exact wording.</p>
+    <p>· "Officially recognised for Making Tax Digital" — do not strengthen to "approved partner", "endorsed", etc.</p>
+    <p>· "Only charged when the filing succeeds" and "four free filing credits on sign-up" — keep as written.</p>
+    <p>· Competitor prices (£228 / £180 / £144 a year) appear on screen only — the VO stays at "the big-name apps charge that every month".</p>
+  </div>
+
+  <h2>Practicalities</h2>
+  <div class="footer-notes">
+    <ul>
+      <li>1080p minimum, 16:9, MP4. Clean voiceover mix; VO as a separate stem if possible; SRT captions appreciated.</li>
+      <li>Total VO ≈ 240 words — lands around 1:40 at a relaxed pace, comfortably inside the 1:30–2:00 target.</li>
+      <li>All demo screens and data will be staged and recorded by me before the session; this script is your edit and VO guide.</li>
+    </ul>
+  </div>
+</main>
