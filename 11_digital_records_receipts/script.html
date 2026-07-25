@@ -1,0 +1,305 @@
+<meta charset="utf-8">
+<title>Video 11 — Digital Records — Receipts · Script</title>
+<style>
+  :root {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131a22;
+      --ink: #e4ebf2;
+      --muted: #93a4b4;
+      --accent: #7aa7f5;
+      --vo-ink: #6fd3b4;
+      --rule: #2a3644;
+      --card: #1a232e;
+      --chip-bg: #223043;
+      --vo-bg: #16261f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131a22;
+    --ink: #e4ebf2;
+    --muted: #93a4b4;
+    --accent: #7aa7f5;
+    --vo-ink: #6fd3b4;
+    --rule: #2a3644;
+    --card: #1a232e;
+    --chip-bg: #223043;
+    --vo-bg: #16261f;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .meta span {
+    background: var(--chip-bg);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .brief {
+    border-left: 3px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+  .brief strong { color: var(--ink); }
+
+  .beat {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1.05rem; }
+  .beat-pace {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 1rem 1.25rem 1.25rem; }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  .screen { margin: 0 0 1rem; font-size: 0.95rem; }
+  .screen ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+  .screen li { margin: 0.15rem 0; }
+  .vo {
+    background: var(--vo-bg);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--vo-ink);
+    margin: 0;
+  }
+  .note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note strong { color: var(--ink); }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .footer-notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-notes ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .footer-notes li { margin: 0.3rem 0; }
+  .locked {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    margin: 1rem 0 0;
+  }
+  .locked p { margin: 0.3rem 0; }
+</style>
+
+<main>
+  <p class="eyebrow">FileThat video scripts · Tier 2 · Video 2 of 9</p>
+  <h1>Digital Records — Receipts</h1>
+  <div class="meta">
+    <span>Target 1:00</span>
+    <span>VO ≈ 144 words</span>
+    <span>The receipts walkthrough</span>
+    <span>British English</span>
+  </div>
+  <p class="brief">
+    <strong>The brief:</strong> the full receipts walkthrough — snap a receipt with your phone,
+    upload it, FileThat reads the details off it, you check and convert, and it's saved as a
+    digital record with the photo attached. This expands Video 5's beat 2 into its own video.
+    The audience is <strong>non-tax-savvy</strong>; friendly, plain-spoken, no jargon.
+    <br><br>
+    <strong>Merge option:</strong> the catalogue offers #5 and #11 as one combined video — if we
+    go that way, this script becomes the expanded beat 2 inside Video 5 and the combined target
+    is ~2:00. This script stands alone as written.
+  </p>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:00–0:14</span>
+      <span class="beat-title">The hook — that receipt is worth money</span>
+      <span class="beat-pace">31 words · ~14s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Open real-world: a crumpled builders' merchant receipt on a van seat, in a jacket
+        pocket, tucked behind a sun visor. Your creative call. End the beat on the receipt
+        flattened out on a surface, phone hovering above it.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        That receipt in your pocket is money off your tax bill — but only if you keep it.
+        Here's how FileThat turns it into a proper digital record in under a minute.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:14–0:32</span>
+      <span class="beat-title">Snap and upload — the details appear</span>
+      <span class="beat-pace">40 words · ~18s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Real-world to product in one motion (I'll record the product shots):
+        <ul>
+          <li>Phone camera over the Wickes receipt → photo taken</li>
+          <li>Receipts page → upload the photo → brief processing moment</li>
+          <li>The details appear, already read off the receipt: <em>Wickes Build Manchester ·
+          15 May 2026 · £243.90 · Materials</em></li>
+        </ul>
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Straight from the builders' merchant, snap the receipt with your phone. Then open
+        FileThat, go to Receipts, and upload the photo. Give it a moment — FileThat reads the
+        details off it for you: who you paid, the date, the amount.
+      </p>
+      <p class="note"><strong>Footage note:</strong> the receipt-snap shot and the staged
+      receipt asset are shared with Video 5's beat 2 (the Wickes receipt in the Video 5
+      folder) — record once, reuse. The £243.90 Wickes purchase matches the demo bank
+      statement and the Q1 materials total.</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:32–0:49</span>
+      <span class="beat-title">Check it, convert it — saved with proof</span>
+      <span class="beat-pace">39 words · ~17s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        A deliberate pause on the read-back screen — cursor hovers over the amount and the
+        category, the "you're in charge" moment → press <strong>Convert</strong> → the
+        confirmation: a digital record in the list, thumbnail of the receipt photo attached.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Now give it a quick check — is the total right, is it in the right category? Fix
+        anything that needs it, then convert. That's it saved as a digital record, with the
+        photo attached as proof. No more shoebox.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:49–1:04</span>
+      <span class="beat-title">The payoff — records that go somewhere</span>
+      <span class="beat-pace">34 words · ~15s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Pull back to the records list filling up with the quarter's receipts → caption:
+        <em>"Digital records feed your VAT &amp; Self Assessment submissions"</em> → end card:
+        FileThat logo + <strong>filethat.co.uk</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        And here's why it's worth those thirty seconds: your digital records are what feed
+        your VAT and Self Assessment submissions. Every receipt you save now is a figure you
+        won't be hunting for later.
+      </p>
+    </div>
+  </section>
+
+  <h2>Fixed claims — please don't paraphrase these</h2>
+  <div class="locked">
+    <p>· "FileThat reads the details off it" — do not strengthen to "does your bookkeeping for you" or "no data entry ever".</p>
+    <p>· The check step stays in frame and in the VO ("give it a quick check") — never cut it to make the flow look fully automatic.</p>
+    <p>· "Digital records feed your VAT and Self Assessment submissions" — records <em>feed</em> submissions; never "file themselves" without the review hedge.</p>
+    <p>· No pricing in this video. If an edit wants a price line, lift the exact wording from Video 1 ("keeping your records is free") — nothing new.</p>
+  </div>
+
+  <h2>Practicalities</h2>
+  <div class="footer-notes">
+    <ul>
+      <li>1080p minimum, 16:9, MP4. Clean voiceover mix; VO as a separate stem if possible; SRT captions appreciated.</li>
+      <li>Total VO ≈ 144 words — lands around 1:00 at a relaxed pace, right on target.</li>
+      <li>All demo screens and data will be staged and recorded by me before the session; the real-world receipt shots (van seat, phone-in-hand snap) are yours to film or source.</li>
+    </ul>
+  </div>
+</main>

@@ -1,0 +1,347 @@
+<meta charset="utf-8">
+<title>Video 25 — Landlords: Foreign Property Quarterly · Script</title>
+<style>
+  :root {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131a22;
+      --ink: #e4ebf2;
+      --muted: #93a4b4;
+      --accent: #7aa7f5;
+      --vo-ink: #6fd3b4;
+      --rule: #2a3644;
+      --card: #1a232e;
+      --chip-bg: #223043;
+      --vo-bg: #16261f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131a22;
+    --ink: #e4ebf2;
+    --muted: #93a4b4;
+    --accent: #7aa7f5;
+    --vo-ink: #6fd3b4;
+    --rule: #2a3644;
+    --card: #1a232e;
+    --chip-bg: #223043;
+    --vo-bg: #16261f;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .meta span {
+    background: var(--chip-bg);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .brief {
+    border-left: 3px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+  .brief strong { color: var(--ink); }
+
+  .beat {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1.05rem; }
+  .beat-pace {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 1rem 1.25rem 1.25rem; }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  .screen { margin: 0 0 1rem; font-size: 0.95rem; }
+  .screen ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+  .screen li { margin: 0.15rem 0; }
+  .vo {
+    background: var(--vo-bg);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--vo-ink);
+    margin: 0;
+  }
+  .note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note strong { color: var(--ink); }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .footer-notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-notes ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .footer-notes li { margin: 0.3rem 0; }
+  .locked {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    margin: 1rem 0 0;
+  }
+  .locked p { margin: 0.3rem 0; }
+</style>
+
+<main>
+  <p class="eyebrow">FileThat video scripts · Tier 3 · Video 7 of 7</p>
+  <h1>Landlords: Foreign Property Quarterly</h1>
+  <div class="meta">
+    <span>Target 1:30</span>
+    <span>VO ≈ 210 words</span>
+    <span>The overseas landlord video</span>
+    <span>British English</span>
+  </div>
+  <p class="brief">
+    <strong>The brief:</strong> the foreign-property counterpart to Video 19 — same quarterly
+    journey (log as you go → quarter ends → pre-filled → review and submit), with two things
+    that only exist for overseas rentals: the <strong>country-by-country view</strong> and
+    <strong>relief for foreign tax paid</strong>. The reassurance beat is the point of the
+    video: the country handling and double-taxation side are automatic — the viewer just keeps
+    the records. Demo property: "Costa Blanca Apartment", Spain, £700/month, Q1 2026-27.
+    Audience is <strong>non-tax-savvy</strong>; the word "crystallisation" does not appear in
+    this or any other video.
+  </p>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:00–0:16</span>
+      <span class="beat-title">The hook — a place in the sun, same rhythm</span>
+      <span class="beat-pace">37 words · ~16s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Open on the dream, not the paperwork: a sunny apartment balcony, keys in hand — your
+        creative call. Cut to FileThat with the foreign-property business selected and the
+        <strong>Costa Blanca Apartment</strong> visible, flagged <strong>Spain</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Renting out a place abroad? The good news: to HMRC it works the same quarterly rhythm
+        as everything else — keep records as you go, send a short update each quarter. FileThat
+        handles the foreign bits for you.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:16–0:35</span>
+      <span class="beat-title">Keep records like any other rental</span>
+      <span class="beat-pace">42 words · ~19s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        The apartment's records: monthly rent entries of <strong>£700</strong>, then the costs
+        going in as they happen — community fees, a repair, the management company's invoice,
+        mortgage interest. The staged entries sum to the quarter: fees <strong>£310</strong>,
+        repairs <strong>£145</strong>, management <strong>£189</strong>, mortgage interest
+        <strong>£465</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Meet the Costa Blanca Apartment — £700 a month in rent. You log it just like a UK
+        rental: the rent as it arrives, and the costs as they crop up — community fees,
+        repairs, the management company, mortgage interest. Same habit, different postcode.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:35–0:48</span>
+      <span class="beat-title">The country bit — already handled</span>
+      <span class="beat-pace">30 words · ~13s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        The country-by-country view: the apartment listed under <strong>Spain</strong>, with its
+        own income and expense totals. If a second country existed it would sit alongside —
+        one staged property is fine; the grouping itself is the shot.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        HMRC wants overseas income reported country by country. You don't need to worry about
+        that — the apartment's already tagged as Spain, so the paperwork lands in the right
+        place automatically.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:48–1:04</span>
+      <span class="beat-title">The quarter ends — it's already filled in</span>
+      <span class="beat-pace">36 words · ~16s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Your Filing Deadlines → the open foreign-property quarter, <strong>6 Apr – 5 Jul 2026,
+        due 7 Aug 2026</strong> → open it → pre-filled, read-only: rent <strong>£2,100</strong>,
+        community fees <strong>£310</strong>, repairs <strong>£145</strong>, management
+        <strong>£189</strong>, mortgage interest <strong>£465</strong> → slow scroll, hold on
+        the "Pre-filled from digital records" banner.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        When the quarter ends, open the update and it's already filled in from your records —
+        £2,100 of rent, and every expense in its box, from the £310 of community fees to the
+        £465 of mortgage interest.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">1:04–1:20</span>
+      <span class="beat-title">The reassurance — foreign tax, sorted</span>
+      <span class="beat-pace">36 words · ~16s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Hold on the foreign-tax line of the form: <strong>foreign tax paid £205</strong> with
+        <strong>foreign tax credit relief</strong> shown applied — the money shot of the video.
+        Caption: <em>"Relief for tax paid abroad — shown automatically."</em>
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        And if you've paid tax in Spain — £205 this quarter — that goes on the form too, with
+        relief for the foreign tax shown automatically. You just keep the records; the
+        double-taxation side is handled for you.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">1:20–1:32</span>
+      <span class="beat-title">Review, submit — filed from Manchester</span>
+      <span class="beat-pace">28 words · ~12s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        <strong>Submit</strong> → success state, HMRC receipt under Proof of Submission → end
+        card: FileThat logo + <strong>filethat.co.uk</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Give it a once-over, press submit, and HMRC sends back a receipt. That's a Spanish
+        rental, filed from Manchester, in the time it takes to make a brew.
+      </p>
+      <p class="note"><strong>Footage note:</strong> the click path mirrors Video 19 on the
+      foreign-property business — stage and record both landlord videos in the same session.
+      Only beats 3 and 5 (country view, foreign-tax line) are unique to this video.</p>
+    </div>
+  </section>
+
+  <h2>Fixed claims — please don't paraphrase these</h2>
+  <div class="locked">
+    <p>· "Relief for the foreign tax shown automatically… the double-taxation side is handled for you" — keep as written. Do <strong>not</strong> strengthen to "you'll never pay tax twice" or any promise about the final tax outcome.</p>
+    <p>· "Give it a once-over, press submit" — the review step stays in the VO and on screen; never imply the update files itself without review.</p>
+    <p>· "The paperwork lands in the right place automatically" refers to per-country reporting only — don't widen it into a claim about foreign tax rules generally.</p>
+    <p>· No pricing in this video, and no specific tax-saving promises.</p>
+  </div>
+
+  <h2>Practicalities</h2>
+  <div class="footer-notes">
+    <ul>
+      <li>1080p minimum, 16:9, MP4. Clean voiceover mix; VO as a separate stem if possible; SRT captions appreciated.</li>
+      <li>Total VO ≈ 210 words — lands around 1:27 at a relaxed pace, right on the 1:30 target. If it needs trimming, beat 2 can lose "Same habit, different postcode."</li>
+      <li>All demo screens and data will be staged and recorded by me before the session — the Costa Blanca Apartment is fully mocked (rent, expenses, foreign tax and relief, open obligation due 7 Aug 2026); the balcony opening shot is yours to film or source.</li>
+    </ul>
+  </div>
+</main>

@@ -1,0 +1,332 @@
+<meta charset="utf-8">
+<title>Video 8 — CIS: Getting Your Deductions Back · Script</title>
+<style>
+  :root {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131a22;
+      --ink: #e4ebf2;
+      --muted: #93a4b4;
+      --accent: #7aa7f5;
+      --vo-ink: #6fd3b4;
+      --rule: #2a3644;
+      --card: #1a232e;
+      --chip-bg: #223043;
+      --vo-bg: #16261f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131a22;
+    --ink: #e4ebf2;
+    --muted: #93a4b4;
+    --accent: #7aa7f5;
+    --vo-ink: #6fd3b4;
+    --rule: #2a3644;
+    --card: #1a232e;
+    --chip-bg: #223043;
+    --vo-bg: #16261f;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .meta span {
+    background: var(--chip-bg);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .brief {
+    border-left: 3px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+  .brief strong { color: var(--ink); }
+
+  .beat {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1.05rem; }
+  .beat-pace {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 1rem 1.25rem 1.25rem; }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  .screen { margin: 0 0 1rem; font-size: 0.95rem; }
+  .screen ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+  .screen li { margin: 0.15rem 0; }
+  .vo {
+    background: var(--vo-bg);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--vo-ink);
+    margin: 0;
+  }
+  .note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note strong { color: var(--ink); }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .footer-notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-notes ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .footer-notes li { margin: 0.3rem 0; }
+  .locked {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    margin: 1rem 0 0;
+  }
+  .locked p { margin: 0.3rem 0; }
+</style>
+
+<main>
+  <p class="eyebrow">FileThat video scripts · Tier 1 · Video 8 of 9</p>
+  <h1>CIS: Getting Your Deductions Back</h1>
+  <div class="meta">
+    <span>Target 1:30</span>
+    <span>VO ≈ 191 words</span>
+    <span>The reassurance-for-subbies video</span>
+    <span>British English</span>
+  </div>
+  <p class="brief">
+    <strong>The brief:</strong> for construction subcontractors who have 20% taken off every
+    payment under CIS. The message: <strong>that money isn't lost</strong>. FileThat shows the
+    deductions HMRC has on record — contractor by contractor, month by month — and those
+    deductions are set against the year's tax bill. Audience is <strong>non-tax-savvy</strong>;
+    keep it warm and concrete, no jargon beyond "CIS" itself (which we explain in one line).
+    All figures below are the staged demo dataset — please don't substitute others.
+  </p>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:00–0:13</span>
+      <span class="beat-title">The hook — the missing 20%</span>
+      <span class="beat-pace">30 words · ~13s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Open real-world, not product: a subcontractor's payment statement from a contractor,
+        the deduction line circled or highlighted. Your creative call — a van tailgate, a
+        kitchen table, a folder of statements. Then cut to FileThat.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        If you work in construction, you'll know the drill: your contractor takes twenty per
+        cent off before they pay you. That's the Construction Industry Scheme — and that money
+        isn't lost.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:13–0:31</span>
+      <span class="beat-title">Your CIS statement — what HMRC has on record</span>
+      <span class="beat-pace">40 words · ~18s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Self Assessment → CIS Deductions → the current-position screen for 2026–27, slow scroll
+        down the contractor rows:
+        <ul>
+          <li><strong>Bardsley Construction Ltd</strong> (ref 123/AB45678) — April: £2,400.00
+          gross · £350.00 materials · £410.00 deducted; May: £1,800.00 · £200.00 · £320.00</li>
+          <li><strong>Millbrook Homes Ltd</strong> (ref 456/MH98765) — June: £1,950.00 ·
+          £150.00 · £360.00</li>
+        </ul>
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Open your CIS statement in FileThat and there it all is — every contractor, every
+        month, straight from HMRC's records. Bardsley Construction in April and May, Millbrook
+        Homes in June — what you were paid, the materials, and exactly what was deducted.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:31–0:52</span>
+      <span class="beat-title">The totals — tax you've already paid</span>
+      <span class="beat-pace">48 words · ~21s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Hold on the totals row: <strong>£6,150 gross · £700 materials · £1,090 deducted</strong>.
+        Then a highlight or gentle zoom on the <strong>£1,090</strong> — this number is the
+        whole video.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Add it up and this quarter that's six thousand one hundred and fifty pounds paid, and
+        one thousand and ninety pounds deducted. Here's the bit that matters: that one thousand
+        and ninety isn't gone. It's tax you've already paid — HMRC is holding it with your name
+        on it.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:52–1:11</span>
+      <span class="beat-title">The payoff — set against your bill</span>
+      <span class="beat-pace">42 words · ~19s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        <strong>Stay on the CIS statement screen.</strong> The £1,090 total remains highlighted;
+        an on-screen caption carries the payoff: <em>"Set against your Self Assessment bill —
+        you only pay the difference."</em> A simple motion-graphic arrow from the £1,090 towards
+        a "Your tax bill" label is fine; a product screen of the calculation is not (see note).
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        When the year's tax is worked out, those deductions are set against the bill — tax
+        already paid, taken off what you owe. So you're not paying twice, and you're not
+        chasing anyone: every pound your contractors deducted counts towards the year's bill.
+      </p>
+      <p class="note"><strong>⚠ Production note — please read before shooting this beat:</strong>
+      do <strong>NOT</strong> cut to the tax-calculation screen showing the £1,090 inside the
+      calculation. The staged demo calculation data does <strong>not</strong> include the CIS
+      offset yet, so no calculation shot will show it — and we must not mock one up. Frame the
+      payoff entirely on the CIS statement screen (plus caption/motion graphics as above),
+      pending a data decision. If the calculation fixture later gains the CIS line, we'll issue
+      a revised beat — until then, statement screen only.</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">1:11–1:25</span>
+      <span class="beat-title">Closer — check it, and relax</span>
+      <span class="beat-pace">31 words · ~14s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Slow pull-back on the CIS statement screen, contractor rows and totals visible →
+        end card: FileThat logo + <strong>filethat.co.uk</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        So check this screen against the statements your contractors give you. It all matches,
+        it's all on record — and come the end of the year, it's all working in your favour.
+      </p>
+    </div>
+  </section>
+
+  <h2>Fixed claims — please don't paraphrase these</h2>
+  <div class="locked">
+    <p>· Deductions are "<strong>set against</strong>" / "<strong>count towards</strong>" the year's bill — keep exactly this framing. Never promise a refund, a specific refund amount, or a refund timescale. The word "refund" should not appear in the VO.</p>
+    <p>· "Straight from HMRC's records" — this screen shows what HMRC holds; don't reword to suggest FileThat calculated or guaranteed these figures.</p>
+    <p>· "It's tax you've already paid" — keep as written; do not extend to "you'll get it back in January" or any date.</p>
+    <p>· The £1,090 never appears inside a tax-calculation shot in this video (see the beat 4 production note).</p>
+    <p>· No pricing in this video.</p>
+  </div>
+
+  <h2>Practicalities</h2>
+  <div class="footer-notes">
+    <ul>
+      <li>1080p minimum, 16:9, MP4. Clean voiceover mix; VO as a separate stem if possible; SRT captions appreciated.</li>
+      <li>Total VO ≈ 191 words — lands around 1:20 at a relaxed pace, comfortably inside the 1:30 target. If it needs a trim in the edit, the second sentence of beat 5 can go.</li>
+      <li>All demo screens and data will be staged and recorded by me before the session (Harper Building Services demo account, 2026–27 CIS position). The real-world opening shot in beat 1 is yours to film or source.</li>
+      <li>All on-screen figures must match the staged dataset exactly: Bardsley Construction Ltd 123/AB45678 (Apr £2,400/£350/£410; May £1,800/£200/£320), Millbrook Homes Ltd 456/MH98765 (Jun £1,950/£150/£360), totals £6,150 / £700 / £1,090.</li>
+    </ul>
+  </div>
+</main>

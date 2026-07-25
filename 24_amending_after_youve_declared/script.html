@@ -1,0 +1,292 @@
+<meta charset="utf-8">
+<title>Video 24 — Amending After You've Declared · Script</title>
+<style>
+  :root {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131a22;
+      --ink: #e4ebf2;
+      --muted: #93a4b4;
+      --accent: #7aa7f5;
+      --vo-ink: #6fd3b4;
+      --rule: #2a3644;
+      --card: #1a232e;
+      --chip-bg: #223043;
+      --vo-bg: #16261f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131a22;
+    --ink: #e4ebf2;
+    --muted: #93a4b4;
+    --accent: #7aa7f5;
+    --vo-ink: #6fd3b4;
+    --rule: #2a3644;
+    --card: #1a232e;
+    --chip-bg: #223043;
+    --vo-bg: #16261f;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .meta span {
+    background: var(--chip-bg);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .brief {
+    border-left: 3px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+  .brief strong { color: var(--ink); }
+
+  .beat {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1.05rem; }
+  .beat-pace {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 1rem 1.25rem 1.25rem; }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  .screen { margin: 0 0 1rem; font-size: 0.95rem; }
+  .screen ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+  .screen li { margin: 0.15rem 0; }
+  .vo {
+    background: var(--vo-bg);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--vo-ink);
+    margin: 0;
+  }
+  .note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note strong { color: var(--ink); }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .footer-notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-notes ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .footer-notes li { margin: 0.3rem 0; }
+  .locked {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    margin: 1rem 0 0;
+  }
+  .locked p { margin: 0.3rem 0; }
+</style>
+
+<main>
+  <p class="eyebrow">FileThat video scripts · Tier 3 · Video 6 of 7</p>
+  <h1>Amending After You've Declared</h1>
+  <div class="meta">
+    <span>Target 0:45</span>
+    <span>VO ≈ 105 words</span>
+    <span>The reassurance video</span>
+    <span>British English</span>
+  </div>
+  <p class="brief">
+    <strong>The brief:</strong> pure reassurance, kept calm and short. The viewer has signed
+    off their year (final declaration done) and then found a mistake. Message: while HMRC's
+    amendment window is open, you can <strong>reopen the year, fix the record, and
+    resubmit</strong> — and it's the same review-and-submit flow they already know from Video 6.
+    No drama, no penalty talk, no jargon. Audience is <strong>non-tax-savvy</strong>.
+  </p>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:00–0:11</span>
+      <span class="beat-title">The hook — mistakes happen</span>
+      <span class="beat-pace">25 words · ~11s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Self Assessment, tax year 2025–26 — the year shown <strong>declared</strong> / signed
+        off (final declaration complete). Calm, steady shot; nothing flashing, nothing red.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        You've signed off your year — and then you spot a receipt down the back of the van.
+        Don't panic. Mistakes happen, and HMRC knows it.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:11–0:23</span>
+      <span class="beat-title">Reopen the year</span>
+      <span class="beat-pace">27 words · ~12s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        The <strong>Intent to Amend</strong> action on the declared 2025–26 year → confirm →
+        the year reopens for corrections. If the amendment-window wording is visible on screen,
+        let it be read.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        If HMRC's amendment window is still open, you can put it right. Reopen the year in
+        FileThat, and it's ready for corrections — no forms, no phone calls.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:23–0:38</span>
+      <span class="beat-title">Fix the record, same flow as ever</span>
+      <span class="beat-pace">34 words · ~15s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Correct the record (e.g. add the missed expense to the digital records) → the year's
+        figures update → Calculate &amp; Submit → review the returned calculation →
+        <strong>Submit</strong>. The calculation shots reuse the staged 2025–26 figures
+        (£36,750 profit, £6,286.80 due) — don't mock up altered numbers.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Fix the record itself — add what was missing, correct what was wrong — and the year's
+        figures update to match. Then it's the same flow you already know: review the new
+        calculation, and press submit.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:38–0:46</span>
+      <span class="beat-title">Closer</span>
+      <span class="beat-pace">19 words · ~8s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Confirmation / proof of submission for the resubmitted year → end card: FileThat logo +
+        <strong>filethat.co.uk</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        That's it — the record's right, and HMRC has the corrected year. One mistake doesn't
+        undo a year's good work.
+      </p>
+    </div>
+  </section>
+
+  <h2>Fixed claims — please don't paraphrase these</h2>
+  <div class="locked">
+    <p>· "<strong>If HMRC's amendment window is still open</strong>" — keep the conditional. Never imply a declared year can always be reopened, or state how long the window lasts.</p>
+    <p>· "Review the new calculation, and press submit" — the review step stays in the VO and in frame; never suggest the amendment goes to HMRC without the viewer reviewing it.</p>
+    <p>· Fix <strong>the record</strong>, not the form — corrections are made to the digital records and the figures follow. Don't reword to "edit the numbers on the return".</p>
+    <p>· Keep the tone consequence-free: no penalty or fine language anywhere in this video. No pricing either.</p>
+  </div>
+
+  <h2>Practicalities</h2>
+  <div class="footer-notes">
+    <ul>
+      <li>1080p minimum, 16:9, MP4. Clean voiceover mix; VO as a separate stem if possible; SRT captions appreciated.</li>
+      <li>Total VO ≈ 105 words — lands around 0:45 at a relaxed pace, right on target. Nothing here should be rushed; if it runs long, slow the screens, not the voice.</li>
+      <li>All demo screens and data will be staged and recorded by me before the session: 2025–26 declared with the final declaration complete, HMRC's amendment window open, calculation figures £36,750 profit / £6,286.80 due (Harper Building Services demo account, HMRC test environment).</li>
+      <li>Companion video: this closes the loop opened by Video 6's final line ("If plans change after you've declared, Intent to Amend reopens the year"). Keep terminology consistent with that script.</li>
+    </ul>
+  </div>
+</main>

@@ -1,0 +1,304 @@
+<meta charset="utf-8">
+<title>Video 9 — Filing a VAT Return · Script</title>
+<style>
+  :root {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131a22;
+      --ink: #e4ebf2;
+      --muted: #93a4b4;
+      --accent: #7aa7f5;
+      --vo-ink: #6fd3b4;
+      --rule: #2a3644;
+      --card: #1a232e;
+      --chip-bg: #223043;
+      --vo-bg: #16261f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131a22;
+    --ink: #e4ebf2;
+    --muted: #93a4b4;
+    --accent: #7aa7f5;
+    --vo-ink: #6fd3b4;
+    --rule: #2a3644;
+    --card: #1a232e;
+    --chip-bg: #223043;
+    --vo-bg: #16261f;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .meta span {
+    background: var(--chip-bg);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .brief {
+    border-left: 3px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+  .brief strong { color: var(--ink); }
+
+  .beat {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1.05rem; }
+  .beat-pace {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 1rem 1.25rem 1.25rem; }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  .screen { margin: 0 0 1rem; font-size: 0.95rem; }
+  .screen ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+  .screen li { margin: 0.15rem 0; }
+  .vo {
+    background: var(--vo-bg);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--vo-ink);
+    margin: 0;
+  }
+  .note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note strong { color: var(--ink); }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .footer-notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-notes ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .footer-notes li { margin: 0.3rem 0; }
+  .locked {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    margin: 1rem 0 0;
+  }
+  .locked p { margin: 0.3rem 0; }
+</style>
+
+<main>
+  <p class="eyebrow">FileThat video scripts · Tier 1 · Video 9 of 9</p>
+  <h1>Filing a VAT Return</h1>
+  <div class="meta">
+    <span>Target 1:00</span>
+    <span>VO ≈ 151 words</span>
+    <span>Re-record — screens have changed</span>
+    <span>British English</span>
+  </div>
+  <p class="brief">
+    <strong>The brief:</strong> a re-record — the earlier version shows old screens. Must show
+    the current <strong>read-only-from-records</strong> flow: open the VAT period, the nine
+    boxes already filled in from digital records, review, submit, receipt, then what you owe.
+    This video pays off the claim made in Video 5 ("digital records feed your VAT &amp; Self
+    Assessment submissions") — the wording in beat 2 deliberately echoes it. Audience is
+    <strong>non-tax-savvy</strong>; no box numbers or jargon in the VO.
+  </p>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:00–0:13</span>
+      <span class="beat-title">Open the period</span>
+      <span class="beat-pace">29 words · ~13s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        VAT → obligations list: the open period <strong>1 Apr – 30 Jun 2026</strong>, due
+        <strong>7 Aug 2026</strong>, clearly marked open; the prior Jan–Mar period shown
+        fulfilled above it (makes the history look real). Cursor hovers on the open period.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        VAT return due? Here's the whole job in FileThat. Open VAT and there's your period —
+        the first of April to the thirtieth of June, due the seventh of August.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:13–0:33</span>
+      <span class="beat-title">The nine boxes — already filled in</span>
+      <span class="beat-pace">44 words · ~20s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Click into the period → the return loads with all nine boxes
+        <strong>pre-filled from digital records</strong>, fields visibly read-only. Slow scroll
+        down the boxes. Caption on screen: <em>"Your digital records feed your VAT return"</em>
+        (same claim as Video 5 — keep the wording consistent).
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Open it, and the nine boxes are already filled in — worked out from the digital records
+        you've been keeping all quarter. Every receipt you snapped, every sale you logged —
+        that's what these figures are built from. Nothing to copy across, nothing to add up.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:33–0:49</span>
+      <span class="beat-title">Review, submit, receipt</span>
+      <span class="beat-pace">37 words · ~16s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Linger on the review — this shot must clearly read as a <strong>check before
+        submitting</strong>:
+        <ul>
+          <li>VAT on sales: <strong>£3,150.00</strong></li>
+          <li>VAT reclaimed on purchases: <strong>£876.49</strong></li>
+          <li>Net VAT due: <strong>£2,273.51</strong></li>
+        </ul>
+        Then <strong>Submit</strong> → HMRC confirmation appears: processing date +
+        form-bundle receipt. Hold on the receipt for a beat.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Give it a once-over — VAT on your sales, VAT you're reclaiming on materials, and the
+        difference at the bottom. Happy? Press submit. HMRC takes it and sends back a receipt,
+        which FileThat keeps for you as proof.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:49–1:07</span>
+      <span class="beat-title">What you owe, and when</span>
+      <span class="beat-pace">41 words · ~18s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        VAT → what you owe: the outstanding charge <strong>£2,273.51, due 7 Aug 2026</strong>.
+        Optionally visible for realism: the past payment of £2,110.40 on 6 May 2026 (last
+        quarter) and the penalties screen showing a clean record, 0 points. End card: FileThat
+        logo + <strong>filethat.co.uk</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        And the bill? FileThat shows you exactly where you stand — two thousand, two hundred
+        and seventy-three pounds and fifty-one pence, due by the seventh of August. Return
+        filed, receipt saved, and you know what to pay and when. That's VAT, done.
+      </p>
+    </div>
+  </section>
+
+  <h2>Fixed claims — please don't paraphrase these</h2>
+  <div class="locked">
+    <p>· The review step is always in frame and in the VO ("Give it a once-over… Happy? Press submit"). Never cut straight from the pre-filled boxes to the confirmation — the viewer reviews it and presses submit.</p>
+    <p>· "Worked out from the digital records you've been keeping" — do not strengthen to "no data entry ever" or "FileThat does your VAT for you".</p>
+    <p>· "Your digital records feed your VAT return" — keep consistent with Video 5's caption wording; don't invent a new phrasing.</p>
+    <p>· No pricing in this video.</p>
+  </div>
+
+  <h2>Practicalities</h2>
+  <div class="footer-notes">
+    <ul>
+      <li>1080p minimum, 16:9, MP4. Clean voiceover mix; VO as a separate stem if possible; SRT captions appreciated.</li>
+      <li>Total VO ≈ 151 words — lands just over 1:00 at a relaxed pace, right on the target. If it needs a trim in the edit, "That's VAT, done." can carry beat 4 alone from "Return filed…".</li>
+      <li>All demo screens and data will be staged and recorded by me before the session (Harper Building Services demo account against HMRC's test environment — nothing on screen is a live submission).</li>
+      <li>On-screen figures must match the staged dataset exactly: open period 1 Apr – 30 Jun 2026 (period key 26A2), due 7 Aug 2026; VAT on sales £3,150.00; reclaimed £876.49; net £2,273.51; prior payment £2,110.40 on 6 May 2026; penalties clean, 0 points.</li>
+    </ul>
+  </div>
+</main>

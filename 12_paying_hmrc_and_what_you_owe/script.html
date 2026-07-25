@@ -1,0 +1,321 @@
+<meta charset="utf-8">
+<title>Video 12 — Paying HMRC &amp; What You Owe · Script</title>
+<style>
+  :root {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131a22;
+      --ink: #e4ebf2;
+      --muted: #93a4b4;
+      --accent: #7aa7f5;
+      --vo-ink: #6fd3b4;
+      --rule: #2a3644;
+      --card: #1a232e;
+      --chip-bg: #223043;
+      --vo-bg: #16261f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131a22;
+    --ink: #e4ebf2;
+    --muted: #93a4b4;
+    --accent: #7aa7f5;
+    --vo-ink: #6fd3b4;
+    --rule: #2a3644;
+    --card: #1a232e;
+    --chip-bg: #223043;
+    --vo-bg: #16261f;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .meta span {
+    background: var(--chip-bg);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .brief {
+    border-left: 3px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+  .brief strong { color: var(--ink); }
+
+  .beat {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1.05rem; }
+  .beat-pace {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 1rem 1.25rem 1.25rem; }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  .screen { margin: 0 0 1rem; font-size: 0.95rem; }
+  .screen ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+  .screen li { margin: 0.15rem 0; }
+  .vo {
+    background: var(--vo-bg);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--vo-ink);
+    margin: 0;
+  }
+  .note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note strong { color: var(--ink); }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .footer-notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-notes ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .footer-notes li { margin: 0.3rem 0; }
+  .locked {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    margin: 1rem 0 0;
+  }
+  .locked p { margin: 0.3rem 0; }
+</style>
+
+<main>
+  <p class="eyebrow">FileThat video scripts · Tier 2 · Video 3 of 9</p>
+  <h1>Paying HMRC &amp; What You Owe</h1>
+  <div class="meta">
+    <span>Target 1:00</span>
+    <span>VO ≈ 154 words</span>
+    <span>The no-surprises video</span>
+    <span>British English</span>
+  </div>
+  <p class="brief">
+    <strong>The brief:</strong> where liabilities and payments live. The emotional job of this
+    video is the <strong>"why am I paying half of next year already?"</strong> reassurance —
+    payments on account explained in plain words, without a single scary term left undefined.
+    Show the what-you-owe screen, the payment history, a quick VAT nod, and point at the Tax
+    Planner for "how much to put aside". <strong>Important:</strong> FileThat shows what's owed;
+    the paying itself happens with HMRC — never imply you can pay inside the app. Audience is
+    <strong>non-tax-savvy</strong>; no jargon.
+  </p>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:00–0:09</span>
+      <span class="beat-title">The hook — one screen, no surprises</span>
+      <span class="beat-pace">21 words · ~9s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Self Assessment → <strong>What You Owe</strong>. The full screen in one view: amounts,
+        due dates, and — importantly — <strong>nothing overdue</strong>. Hold long enough for
+        the viewer to see it's calm, not scary.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Nobody likes a surprise tax bill. So FileThat puts everything you owe HMRC on one
+        screen — here's how to read it.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:09–0:21</span>
+      <span class="beat-title">The balancing payment — last year's bill</span>
+      <span class="beat-pace">26 words · ~12s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Zoom to the first line: <strong>balancing payment £6,286.80</strong> for the 2025–26
+        year, due <strong>31 Jan 2027</strong>. Caption: <em>"The tax on last year's profit."</em>
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        First, the balancing payment. Ignore the name — it's simply the tax bill for the year
+        you've just finished, with the amount and the date it's due.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:21–0:42</span>
+      <span class="beat-title">Payments on account — the reassurance</span>
+      <span class="beat-pace">47 words · ~21s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Pan down to the two payments on account:
+        <ul>
+          <li>First payment on account: <strong>£3,143.40</strong>, due <strong>31 Jan 2027</strong>
+          — alongside the balancing payment (total payable that day: <strong>£9,430.20</strong>)</li>
+          <li>Second payment on account: <strong>£3,143.40</strong>, due <strong>31 Jul 2027</strong></li>
+        </ul>
+        Caption over the pair: <em>"A head start on next year's tax — half in January, half
+        in July."</em>
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Then payments on account — the bit that catches people out. HMRC asks for a head start
+        on next year's tax, in two halves: one in January alongside your bill, one in July.
+        Feels early — but it spreads the cost, and FileThat lists both halves with their dates.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:42–0:53</span>
+      <span class="beat-title">Payment history — and the VAT side</span>
+      <span class="beat-pace">24 words · ~11s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Scroll to payment history: <strong>£4,850.00 paid 25 Jan 2026</strong>, settling the
+        2024–25 bill. Then a quick cut to the VAT side: open period
+        <strong>1 Apr – 30 Jun 2026</strong>, net VAT <strong>£2,273.51</strong>, due
+        <strong>7 Aug 2026</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Below that, your payment history — every payment you've made, on record. VAT registered?
+        Your VAT position lives here too, with its own due date.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:53–1:09</span>
+      <span class="beat-title">The closer — who you actually pay</span>
+      <span class="beat-pace">36 words · ~16s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Back to the full What You Owe screen. Caption: <em>"You pay HMRC directly — FileThat
+        shows you what and when."</em> Brief glimpse of the Tax Planner menu item → end card:
+        FileThat logo + <strong>filethat.co.uk</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        One thing to know: the paying itself happens with HMRC — FileThat's job is making sure
+        you know exactly what and when. And for how much to put aside, the Tax Planner's got
+        you. That's another video.
+      </p>
+    </div>
+  </section>
+
+  <h2>Fixed claims — please don't paraphrase these</h2>
+  <div class="locked">
+    <p>· "The paying itself happens with HMRC" — <strong>keep this in every cut</strong>. Never show or imply a pay button inside FileThat; the app shows what's owed and when, HMRC takes the money.</p>
+    <p>· "A head start on next year's tax" — keep the payments-on-account explanation this plain. Don't add rules about thresholds, who does and doesn't pay them, or how they're calculated; that's beyond this video.</p>
+    <p>· All amounts and dates (£6,286.80, two × £3,143.40, £9,430.20 payable 31 Jan 2027, £3,143.40 due 31 Jul 2027, £4,850.00 paid 25 Jan 2026, VAT £2,273.51 due 7 Aug 2026) are staged demo data — use them exactly as shown, in captions and thumbnails too.</p>
+    <p>· No pricing in this video. If an edit wants a price line, lift the exact wording from Video 1 ("keeping your records is free") — nothing new.</p>
+  </div>
+
+  <h2>Practicalities</h2>
+  <div class="footer-notes">
+    <ul>
+      <li>1080p minimum, 16:9, MP4. Clean voiceover mix; VO as a separate stem if possible; SRT captions appreciated.</li>
+      <li>Total VO ≈ 154 words — lands just over 1:00 at a relaxed pace (~2.4 words per second). If it needs trimming, the VAT sentence in beat 4 can become an on-screen caption only, bringing it under a minute.</li>
+      <li>All demo screens and data will be staged and recorded by me before the session — everything on screen is HMRC's test environment; no real balances.</li>
+    </ul>
+  </div>
+</main>

@@ -1,0 +1,289 @@
+<meta charset="utf-8">
+<title>Video 22 — Your Dashboards · Script</title>
+<style>
+  :root {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131a22;
+      --ink: #e4ebf2;
+      --muted: #93a4b4;
+      --accent: #7aa7f5;
+      --vo-ink: #6fd3b4;
+      --rule: #2a3644;
+      --card: #1a232e;
+      --chip-bg: #223043;
+      --vo-bg: #16261f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131a22;
+    --ink: #e4ebf2;
+    --muted: #93a4b4;
+    --accent: #7aa7f5;
+    --vo-ink: #6fd3b4;
+    --rule: #2a3644;
+    --card: #1a232e;
+    --chip-bg: #223043;
+    --vo-bg: #16261f;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .meta span {
+    background: var(--chip-bg);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .brief {
+    border-left: 3px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+  .brief strong { color: var(--ink); }
+
+  .beat {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1.05rem; }
+  .beat-pace {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 1rem 1.25rem 1.25rem; }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  .screen { margin: 0 0 1rem; font-size: 0.95rem; }
+  .screen ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+  .screen li { margin: 0.15rem 0; }
+  .vo {
+    background: var(--vo-bg);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--vo-ink);
+    margin: 0;
+  }
+  .note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note strong { color: var(--ink); }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .footer-notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-notes ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .footer-notes li { margin: 0.3rem 0; }
+  .locked {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    margin: 1rem 0 0;
+  }
+  .locked p { margin: 0.3rem 0; }
+</style>
+
+<main>
+  <p class="eyebrow">FileThat video scripts · Tier 3 · Video 4 of 7</p>
+  <h1>Your Dashboards</h1>
+  <div class="meta">
+    <span>Target 0:45</span>
+    <span>VO ≈ 110 words</span>
+    <span>The at-a-glance video</span>
+    <span>British English</span>
+  </div>
+  <p class="brief">
+    <strong>The brief:</strong> Profit &amp; Loss and Portfolio overviews in one video. The
+    message is not "look at these charts" — it's that the dashboards are <strong>built from the
+    same records you already keep</strong>, so they're always current with nothing extra to do.
+    Two views, one idea. Audience is <strong>non-tax-savvy</strong>; no jargon.
+  </p>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:00–0:08</span>
+      <span class="beat-title">The hook — where do I stand?</span>
+      <span class="beat-pace">18 words · ~8s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        A quick flash of the old way — a spreadsheet, a pile of statements — then cut straight
+        to the dashboard loading. Keep it brisk; this video earns its 45 seconds.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Want to know how the business is doing without digging through paperwork? That's what
+        your dashboards are for.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:08–0:19</span>
+      <span class="beat-title">Profit &amp; Loss — the quarter at a glance</span>
+      <span class="beat-pace">24 words · ~11s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        The Profit &amp; Loss view for Q1: income <strong>£15,750</strong>, expenses
+        <strong>£6,621.14</strong>, profit <strong>£9,128.86</strong>. Hold long enough for the
+        three numbers to land; a gentle highlight on each as it's spoken.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Profit and Loss shows the quarter at a glance: £15,750 in, £6,621.14 out — £9,128.86
+        profit. One screen, and you know exactly where you stand.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:19–0:35</span>
+      <span class="beat-title">Portfolio — the whole picture</span>
+      <span class="beat-pace">36 words · ~16s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Switch to the Portfolio overview: three income sources side by side —
+        <strong>Harper Building Services</strong> (the trade), the <strong>UK rental</strong>,
+        and the <strong>Costa Blanca Apartment</strong> in Spain — each with its own totals.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Got more than one string to your bow? The Portfolio view lines them all up — the
+        building trade, the UK rental, even the apartment in Spain — so you can see the whole
+        picture in one place.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:35–0:49</span>
+      <span class="beat-title">The closer — always current, nothing to do</span>
+      <span class="beat-pace">31 words · ~14s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Add a ledger entry → cut back to the dashboard, the totals tick up → end card: FileThat
+        logo + <strong>filethat.co.uk</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        And here's the best bit: there's nothing to update. The dashboards are built from the
+        same records you keep every week — so every number is already current, every time you
+        look.
+      </p>
+    </div>
+  </section>
+
+  <h2>Fixed claims — please don't paraphrase these</h2>
+  <div class="locked">
+    <p>· "Built from the same records you keep" — this is the video's one claim; do not strengthen it to "live bank data" or "synced with HMRC".</p>
+    <p>· The three figures in beat 2 (£15,750 / £6,621.14 / £9,128.86) must match the on-screen dashboard exactly — they're the same numbers viewers see in the quarterly-update videos.</p>
+    <p>· No pricing in this video, and no specific tax-saving promises.</p>
+  </div>
+
+  <h2>Practicalities</h2>
+  <div class="footer-notes">
+    <ul>
+      <li>1080p minimum, 16:9, MP4. Clean voiceover mix; VO as a separate stem if possible; SRT captions appreciated.</li>
+      <li>Total VO ≈ 110 words — lands around 0:45 at a relaxed pace, on the 0:45 target. If it needs trimming, beat 1 can cut straight to "That's what your dashboards are for."</li>
+      <li>All demo screens and data will be staged and recorded by me before the session — the P&amp;L figures and all three portfolio businesses (trade, UK rental, Spanish apartment) come from the one shared demo dataset; the spreadsheet flash in beat 1 is yours to film or source.</li>
+    </ul>
+  </div>
+</main>

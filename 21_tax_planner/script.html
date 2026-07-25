@@ -1,0 +1,290 @@
+<meta charset="utf-8">
+<title>Video 21 — Tax Planner · Script</title>
+<style>
+  :root {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131a22;
+      --ink: #e4ebf2;
+      --muted: #93a4b4;
+      --accent: #7aa7f5;
+      --vo-ink: #6fd3b4;
+      --rule: #2a3644;
+      --card: #1a232e;
+      --chip-bg: #223043;
+      --vo-bg: #16261f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131a22;
+    --ink: #e4ebf2;
+    --muted: #93a4b4;
+    --accent: #7aa7f5;
+    --vo-ink: #6fd3b4;
+    --rule: #2a3644;
+    --card: #1a232e;
+    --chip-bg: #223043;
+    --vo-bg: #16261f;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .meta span {
+    background: var(--chip-bg);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .brief {
+    border-left: 3px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+  .brief strong { color: var(--ink); }
+
+  .beat {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1.05rem; }
+  .beat-pace {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 1rem 1.25rem 1.25rem; }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  .screen { margin: 0 0 1rem; font-size: 0.95rem; }
+  .screen ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+  .screen li { margin: 0.15rem 0; }
+  .vo {
+    background: var(--vo-bg);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--vo-ink);
+    margin: 0;
+  }
+  .note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note strong { color: var(--ink); }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .footer-notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-notes ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .footer-notes li { margin: 0.3rem 0; }
+  .locked {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    margin: 1rem 0 0;
+  }
+  .locked p { margin: 0.3rem 0; }
+</style>
+
+<main>
+  <p class="eyebrow">FileThat video scripts · Tier 3 · Video 3 of 7</p>
+  <h1>Tax Planner</h1>
+  <div class="meta">
+    <span>Target 0:45</span>
+    <span>VO ≈ 110 words</span>
+    <span>The put-money-aside video</span>
+    <span>British English</span>
+  </div>
+  <p class="brief">
+    <strong>The brief:</strong> the Tax Planner turns "how much should I put aside?" into a
+    number. Show the in-year position (one quarter of records, nothing due yet) and the
+    end-of-year estimate built from those same records. The comfort is knowing early —
+    <strong>never</strong> present the estimate as a promise; it's a good guide that updates as
+    records are added. Audience is <strong>non-tax-savvy</strong>; keep it to one idea.
+  </p>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:00–0:10</span>
+      <span class="beat-title">The hook — stop guessing</span>
+      <span class="beat-pace">23 words · ~10s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Open on the worry, kept light: a scribbled "put aside for tax??" note, or a savings
+        account named "TAX MAYBE" — your creative call. Cut to the Tax Planner page loading.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        How much should you be putting aside for tax? For most people that's a guess. The Tax
+        Planner turns it into a number.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:10–0:22</span>
+      <span class="beat-title">Where you are now</span>
+      <span class="beat-pace">28 words · ~12s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        The in-year view for 2026-27: one quarter of records → profit so far
+        <strong>£9,128.86</strong> → tax due so far <strong>£0.00</strong>. Let the zero
+        register — it's a nice moment, not a trick.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        It starts with where you are now. One quarter in, your records show £9,128.86 of
+        profit — and no tax due yet, because you're still inside your personal allowance.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:22–0:38</span>
+      <span class="beat-title">Where the year is heading</span>
+      <span class="beat-pace">37 words · ~16s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Scroll to the end-of-year estimate: projected income <strong>£36,515</strong> →
+        estimated tax and National Insurance for the year <strong>£6,225.70</strong>. Caption:
+        <em>"An estimate — it updates as you add records."</em>
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Then it looks ahead. Carry on at this rate and the year comes out around £36,515 of
+        income — with roughly £6,225 of tax and National Insurance to pay. Now you know what to
+        put aside each month.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:38–0:47</span>
+      <span class="beat-title">The closer — a guide, not a bill</span>
+      <span class="beat-pace">21 words · ~9s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Add one record in the ledger → cut back to the planner, the estimate nudges → end card:
+        FileThat logo + <strong>filethat.co.uk</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        It's an estimate, not a bill — a good guide that updates itself every time you add a
+        record. No January surprises.
+      </p>
+    </div>
+  </section>
+
+  <h2>Fixed claims — please don't paraphrase these</h2>
+  <div class="locked">
+    <p>· "It's an estimate, not a bill — a good guide" — keep the hedge; never present the year-end figure as what the viewer <strong>will</strong> pay, and never round it into a promise ("you'll owe £6,225").</p>
+    <p>· "No tax due yet, because you're still inside your personal allowance" — keep tied to this demo's figures; do not generalise into advice about anyone else's allowance.</p>
+    <p>· "Updates itself every time you add a record" — keep as written; do not strengthen to "always accurate" or "real-time HMRC figures".</p>
+    <p>· No pricing in this video, and no specific tax-saving promises.</p>
+  </div>
+
+  <h2>Practicalities</h2>
+  <div class="footer-notes">
+    <ul>
+      <li>1080p minimum, 16:9, MP4. Clean voiceover mix; VO as a separate stem if possible; SRT captions appreciated.</li>
+      <li>Total VO ≈ 110 words — lands around 0:45 at a relaxed pace, on the 0:45 target. If it needs trimming, beat 4 can lose "No January surprises."</li>
+      <li>All demo screens and data will be staged and recorded by me before the session (in-year calculation and end-of-year estimate both return the figures above); the opening real-world shot is yours to film or source.</li>
+    </ul>
+  </div>
+</main>

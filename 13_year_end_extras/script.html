@@ -1,0 +1,304 @@
+<meta charset="utf-8">
+<title>Video 13 — Year-End Extras · Script</title>
+<style>
+  :root {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131a22;
+      --ink: #e4ebf2;
+      --muted: #93a4b4;
+      --accent: #7aa7f5;
+      --vo-ink: #6fd3b4;
+      --rule: #2a3644;
+      --card: #1a232e;
+      --chip-bg: #223043;
+      --vo-bg: #16261f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131a22;
+    --ink: #e4ebf2;
+    --muted: #93a4b4;
+    --accent: #7aa7f5;
+    --vo-ink: #6fd3b4;
+    --rule: #2a3644;
+    --card: #1a232e;
+    --chip-bg: #223043;
+    --vo-bg: #16261f;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .meta span {
+    background: var(--chip-bg);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .brief {
+    border-left: 3px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+  .brief strong { color: var(--ink); }
+
+  .beat {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1.05rem; }
+  .beat-pace {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 1rem 1.25rem 1.25rem; }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  .screen { margin: 0 0 1rem; font-size: 0.95rem; }
+  .screen ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+  .screen li { margin: 0.15rem 0; }
+  .vo {
+    background: var(--vo-bg);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--vo-ink);
+    margin: 0;
+  }
+  .note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note strong { color: var(--ink); }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .footer-notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-notes ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .footer-notes li { margin: 0.3rem 0; }
+  .locked {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    margin: 1rem 0 0;
+  }
+  .locked p { margin: 0.3rem 0; }
+</style>
+
+<main>
+  <p class="eyebrow">FileThat video scripts · Tier 2 · Video 4 of 9</p>
+  <h1>Year-End Extras</h1>
+  <div class="meta">
+    <span>Target 1:00</span>
+    <span>VO ≈ 156 words</span>
+    <span>The "you probably need none of these" video</span>
+    <span>British English</span>
+  </div>
+  <p class="brief">
+    <strong>The brief:</strong> the Extra Details sections and Year-End Allowances — everything
+    beyond the four quarterly updates, on the way to the final declaration. The single most
+    important message is <strong>reassurance</strong>: most people need few or none of these,
+    and skipping them is fine. Keep the scope modest — this is a tour of where things go, not
+    a tax lesson. The audience is <strong>non-tax-savvy</strong>; no jargon, and nothing that
+    makes the year-end feel bigger than it is.
+  </p>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:00–0:12</span>
+      <span class="beat-title">The hook — one last stop before sign-off</span>
+      <span class="beat-pace">28 words · ~12s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Self Assessment overview: the 2025–26 year with all four quarters showing as met, and
+        the final declaration still open (due <strong>31 Jan 2027</strong>). Cursor drifts to
+        the <strong>Extra Details</strong> and <strong>Year-End Allowances</strong> menu items.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Your quarterly updates cover the day-to-day. But before you sign the year off, there's
+        one last stop: the extras. Don't worry — for most people it's a short visit.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:12–0:35</span>
+      <span class="beat-title">Extra Details — everything that isn't your trade</span>
+      <span class="beat-pace">52 words · ~23s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Self Assessment → <strong>Extra Details</strong> — a slow scroll down the menu of
+        sections, pacing the scroll to the examples as they're spoken (other income, savings
+        interest, pensions, charity giving). No section is opened; this beat is about knowing
+        the list exists. Caption: <em>"Only fill in what applies to you."</em>
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Extra Details is where anything that isn't your trade goes. A job on the side? Savings
+        interest? Pension contributions, or Gift Aid on charity donations? Each has its own
+        simple section. Scan the list, fill in the ones that apply to you — and skip the rest.
+        Plenty of people skip the lot.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:35–0:55</span>
+      <span class="beat-title">Year-End Allowances — the once-a-year claims</span>
+      <span class="beat-pace">44 words · ~20s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        <strong>Year-End Allowances</strong>. For the worked example, show the UK-property
+        annual allowances screen with <strong>£420.00 — cost of replacing domestic items</strong>
+        already entered (this is staged and looks real). Caption:
+        <em>"Claimed once a year, not every quarter."</em>
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Then Year-End Allowances — one-off claims and adjustments made once a year rather than
+        every quarter. A landlord, for example, can claim the cost of replacing things like a
+        worn-out sofa or fridge in one go here. Again: if none apply, there's nothing to do.
+      </p>
+      <p class="note"><strong>Footage note:</strong> the self-employment annual-submission
+      screen's mock data is <strong>not yet staged</strong> — it currently loads as an empty
+      state. Frame this beat around the UK-property annual allowances screen (the £420
+      replacing-domestic-items figure <em>is</em> staged) and don't dwell on the self-employment
+      annual page. If we later stage SE annual data, a one-shot pickup can swap it in.</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:55–1:09</span>
+      <span class="beat-title">The closer — into the final declaration</span>
+      <span class="beat-pace">32 words · ~14s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Back to the Self Assessment overview: the open final declaration row (2025–26, due
+        <strong>31 Jan 2027</strong>) highlighted → end card: FileThat logo +
+        <strong>filethat.co.uk</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        And that's the extras — often minutes, sometimes nothing at all. From here the year's
+        ready for its final declaration: review the figures, press submit. That walkthrough is
+        in Your Self Assessment Year.
+      </p>
+    </div>
+  </section>
+
+  <h2>Fixed claims — please don't paraphrase these</h2>
+  <div class="locked">
+    <p>· "Plenty of people skip the lot" / "if none apply, there's nothing to do" — the reassurance is the video. Never let an edit make Extra Details or Year-End Allowances sound like required steps.</p>
+    <p>· "Review the figures, press submit" — keep the review step in the closer; never promise the final declaration files itself without review.</p>
+    <p>· Keep the allowance example generic in the VO ("things like a worn-out sofa or fridge") — the £420.00 figure stays on-screen only; no £ amounts or allowance rules spoken aloud.</p>
+    <p>· Dates on screen (final declaration due 31 Jan 2027, year 2025–26) are staged demo data — use them exactly as shown.</p>
+    <p>· No pricing in this video. If an edit wants a price line, lift the exact wording from Video 1 ("keeping your records is free") — nothing new.</p>
+  </div>
+
+  <h2>Practicalities</h2>
+  <div class="footer-notes">
+    <ul>
+      <li>1080p minimum, 16:9, MP4. Clean voiceover mix; VO as a separate stem if possible; SRT captions appreciated.</li>
+      <li>Total VO ≈ 156 words — lands just over 1:00 at a relaxed pace (~2.4 words per second). If it needs trimming, the closer's last sentence (the Video 6 cross-reference) can become an on-screen caption only.</li>
+      <li>All demo screens and data will be staged and recorded by me before the session (see the footage note in beat 3 for the one screen that isn't) — everything is HMRC's test environment; nothing on screen is a live submission.</li>
+    </ul>
+  </div>
+</main>
