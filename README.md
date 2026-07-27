@@ -52,6 +52,7 @@ One folder per video, named `<number>_<video_heading>`. Each folder holds:
 | Before recording sessions (optional) | **`obligation_snapshot_uq` race** logs a benign WARN on first concurrent capture — small retry-on-conflict fix available if clean logs are wanted. |
 | Optional tidy-up | Test user's stored HMRC Business Id is `XBIS12345678901`; fixtures use `XAIS12345678910`. Fallback stubs cover it, but aligning via the org settings screen removes the one visible inconsistency. |
 | After the shoot | **Revert prod**: restart `filethat-api` with `docker_prod_env.txt`, remove `filethat-wiremock` (steps in `filethat/DEMO_STAGING.md`). Don't re-enable registration before reverting. |
+| After the shoot | **Revert `minStart={2025}`** on the Tax Calculations page (`new_ui/.../tax_calculations/index.js`) back to `2026` — lowered for #6 so the picker can reach the staged 2025-26 year-end (MTD ITSA has no real pre-2026-27 years). |
 
 ## Practicalities (all videos)
 

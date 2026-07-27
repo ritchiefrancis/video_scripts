@@ -11,7 +11,7 @@ Finished video files go in this folder alongside the script.
 ## Checklist
 
 - [x] Script written
-- [ ] Screens staged & recorded (Ritchie)
-- [ ] Edit + voiceover (creator)
-- [ ] Final video delivered to this folder
+- [x] Screens staged & recorded (Ritchie)
+- [x] Edit + voiceover (creator)
+- [x] Final video delivered to this folder
 - [ ] Published
