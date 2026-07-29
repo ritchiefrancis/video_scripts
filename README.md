@@ -53,7 +53,7 @@ One folder per video, named `<number>_<video_heading>`. Each folder holds:
 | Optional tidy-up | Test user's stored HMRC Business Id is `XBIS12345678901`; fixtures use `XAIS12345678910`. Fallback stubs cover it, but aligning via the org settings screen removes the one visible inconsistency. |
 | After the shoot | **Remove the deprecated Plaid integration** (`PlaidService`, the Link connect flow in `BankingService`/`OpenBankingController`, and the UI connect pages). Sync now skips CSV-import connections, but live-bank sync still points at Plaid sandbox. |
 | After the shoot | **Revert prod**: restart `filethat-api` with `docker_prod_env.txt`, remove `filethat-wiremock` (steps in `filethat/DEMO_STAGING.md`). Don't re-enable registration before reverting. |
-| After the shoot | **Revert `minStart={2025}`** on the Tax Calculations page (`new_ui/.../tax_calculations/index.js`) back to `2026` — lowered for #6 so the picker can reach the staged 2025-26 year-end (MTD ITSA has no real pre-2026-27 years). |
+| After the shoot | **Revert `minStart={2025}`** back to `2026` on the Tax Calculations page (`new_ui/.../tax_calculations/index.js`, lowered for #6) **and** on Your Filing Deadlines (`new_ui/.../in-year/obligations/index.js`, lowered for #13's four-fulfilled-quarters shot) — the pickers were lowered so they can reach the staged 2025-26 year (MTD ITSA has no real pre-2026-27 years). |
 
 ## Practicalities (all videos)
 
