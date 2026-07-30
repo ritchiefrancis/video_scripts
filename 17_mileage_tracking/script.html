@@ -1,0 +1,317 @@
+<meta charset="utf-8">
+<title>Video 17 — Mileage Tracking · Script</title>
+<style>
+  :root {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131a22;
+      --ink: #e4ebf2;
+      --muted: #93a4b4;
+      --accent: #7aa7f5;
+      --vo-ink: #6fd3b4;
+      --rule: #2a3644;
+      --card: #1a232e;
+      --chip-bg: #223043;
+      --vo-bg: #16261f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131a22;
+    --ink: #e4ebf2;
+    --muted: #93a4b4;
+    --accent: #7aa7f5;
+    --vo-ink: #6fd3b4;
+    --rule: #2a3644;
+    --card: #1a232e;
+    --chip-bg: #223043;
+    --vo-bg: #16261f;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .meta span {
+    background: var(--chip-bg);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .brief {
+    border-left: 3px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+  .brief strong { color: var(--ink); }
+
+  .beat {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1.05rem; }
+  .beat-pace {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 1rem 1.25rem 1.25rem; }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  .screen { margin: 0 0 1rem; font-size: 0.95rem; }
+  .screen ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+  .screen li { margin: 0.15rem 0; }
+  .vo {
+    background: var(--vo-bg);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--vo-ink);
+    margin: 0;
+  }
+  .note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note strong { color: var(--ink); }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .footer-notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-notes ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .footer-notes li { margin: 0.3rem 0; }
+  .locked {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    margin: 1rem 0 0;
+  }
+  .locked p { margin: 0.3rem 0; }
+</style>
+
+<main>
+  <p class="eyebrow">FileThat video scripts · Tier 2 · Video 8 of 9</p>
+  <h1>Mileage Tracking</h1>
+  <div class="meta">
+    <span>Target 1:00</span>
+    <span>VO ≈ 129 words</span>
+    <span>The log-it-live video</span>
+    <span>British English</span>
+  </div>
+  <p class="brief">
+    <strong>The brief:</strong> log journeys and let the app do the maths. The whole video is
+    built around <strong>adding one trip live on camera</strong> — the page starts empty and
+    that's fine; no seeded list needed. The tiles doing their thing after one entry <em>is</em>
+    the demo. Business-vs-personal is handled in the voiceover (log business journeys, leave
+    the school run out) — there's no toggle on screen. Audience is
+    <strong>non-tax-savvy</strong>; no jargon, no tax lecture.
+  </p>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:00–0:12</span>
+      <span class="beat-title">The hook — miles are money</span>
+      <span class="beat-pace">29 words · ~12s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        The <strong>Mileage</strong> page, fresh and empty: the four tiles at zero
+        (Total Miles, Tax Deduction, Total Trips, Digital Records Synced). Caption:
+        <em>"Every business mile counts."</em>
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        If you drive for work, every business mile counts towards your tax — and scribbled
+        postcodes on the back of a receipt won't cut it. FileThat keeps a proper mileage log.
+      </p>
+      <p class="note"><strong>Footage note:</strong> no seeding for this video — load any
+      demo scene to wipe, and the empty state is the opening shot.</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:12–0:30</span>
+      <span class="beat-title">Add a trip — the live moment</span>
+      <span class="beat-pace">30 words · ~13s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Press <strong>Add Trip</strong> → the Add Mileage Entry form, filled in real time:
+        <ul>
+          <li>today's date · from <strong>Workshop — Sale</strong> · to <strong>Jewson — Stockport</strong></li>
+          <li>miles <strong>14</strong> · vehicle <strong>Car</strong> · purpose <strong>Materials pickup</strong></li>
+        </ul>
+        Save → the trip appears and the tiles tick up: <strong>14 miles · £6.30 · 1 trip</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Logging one takes seconds: where you went, why, and the miles. Save — and FileThat
+        works out what it's worth at HMRC's approved rates, forty-five pence a mile to start.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:30–0:44</span>
+      <span class="beat-title">What to log — and what not to</span>
+      <span class="beat-pace">28 words · ~12s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Reopen the form briefly and drop the <strong>Vehicle Type</strong> menu — Car,
+        Motorcycle, Bicycle — then close without saving. Caption:
+        <em>"Business journeys only."</em>
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Cars, motorbikes, even bicycles — each has its own rate. Keep the log to business
+        journeys: client visits, supplier runs, getting to jobs. The school run doesn't count,
+        so don't log it.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:44–0:55</span>
+      <span class="beat-title">Into your records — one click</span>
+      <span class="beat-pace">28 words · ~12s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Press <strong>Sync</strong> on the new trip → its status flips to
+        <strong>Synced</strong> and the <strong>Digital Records Synced</strong> tile reads 1.
+        A glance at the <strong>Download</strong> button — don't press it.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        One more click sends the trip into your digital records, so it's already there when
+        your quarterly update comes round. Prefer a spreadsheet? Download the whole log any
+        time.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:55–1:02</span>
+      <span class="beat-title">Close — log it while it's fresh</span>
+      <span class="beat-pace">14 words · ~7s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Caption: <em>"Log it while it's fresh."</em> End card: FileThat logo +
+        <strong>filethat.co.uk</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Log trips while they're fresh — future-you, and your tax bill, will thank you.
+      </p>
+    </div>
+  </section>
+
+  <h2>Fixed claims — please don't paraphrase these</h2>
+  <div class="locked">
+    <p>· "At HMRC's approved rates, forty-five pence a mile to start" — state it as what the app calculates, nothing more. No advice about who can claim mileage, the 10,000-mile taper, or mileage-versus-actual-costs; "to start" is as far as the taper gets mentioned.</p>
+    <p>· "The school run doesn't count" — keep the business-only guidance this light. No commuting rules, no HMRC definitions.</p>
+    <p>· No pricing in this video. If an edit wants a price line, lift the exact wording from Video 1 ("keeping your records is free") — nothing new.</p>
+  </div>
+
+  <h2>Practicalities</h2>
+  <div class="footer-notes">
+    <ul>
+      <li>1080p minimum, 16:9, MP4. Clean voiceover mix; VO as a separate stem if possible; SRT captions appreciated.</li>
+      <li>Total VO ≈ 129 words — lands just under 1:00 at a relaxed pace (~2.4 words per second).</li>
+      <li>All demo screens are staged and recorded by Ritchie. The 14-mile trip is added and synced live — the sync creates a real Travel record in digital records, so record this video in its own scene load and reload before any records-dependent shots (the £6.30 would otherwise sit in the quarter's expenses).</li>
+    </ul>
+  </div>
+</main>

@@ -1,0 +1,326 @@
+<meta charset="utf-8">
+<title>Video 16 — Income &amp; Expenditure Ledger · Script</title>
+<style>
+  :root {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #131a22;
+      --ink: #e4ebf2;
+      --muted: #93a4b4;
+      --accent: #7aa7f5;
+      --vo-ink: #6fd3b4;
+      --rule: #2a3644;
+      --card: #1a232e;
+      --chip-bg: #223043;
+      --vo-bg: #16261f;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #131a22;
+    --ink: #e4ebf2;
+    --muted: #93a4b4;
+    --accent: #7aa7f5;
+    --vo-ink: #6fd3b4;
+    --rule: #2a3644;
+    --card: #1a232e;
+    --chip-bg: #223043;
+    --vo-bg: #16261f;
+  }
+  :root[data-theme="light"] {
+    --paper: #fbfcfe;
+    --ink: #1d2b38;
+    --muted: #586a7a;
+    --accent: #2563eb;
+    --vo-ink: #0e6b52;
+    --rule: #dfe6ee;
+    --card: #ffffff;
+    --chip-bg: #eaf1fb;
+    --vo-bg: #f2faf7;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 2.5rem 1.25rem 4rem;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0 0 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin: 0 0 0.75rem;
+    text-wrap: balance;
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0 0 1.5rem;
+  }
+  .meta span {
+    background: var(--chip-bg);
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.2rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  .brief {
+    border-left: 3px solid var(--accent);
+    padding: 0.25rem 0 0.25rem 1rem;
+    color: var(--muted);
+    margin: 0 0 2.5rem;
+  }
+  .brief strong { color: var(--ink); }
+
+  .beat {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    margin: 0 0 1.25rem;
+    overflow: hidden;
+  }
+  .beat-head {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .beat-time {
+    font-variant-numeric: tabular-nums;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+  .beat-title { font-weight: 700; font-size: 1.05rem; }
+  .beat-pace {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .beat-body { padding: 1rem 1.25rem 1.25rem; }
+  .label {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--muted);
+    margin: 0 0 0.35rem;
+  }
+  .screen { margin: 0 0 1rem; font-size: 0.95rem; }
+  .screen ul { margin: 0.25rem 0 0; padding-left: 1.25rem; }
+  .screen li { margin: 0.15rem 0; }
+  .vo {
+    background: var(--vo-bg);
+    border-radius: 8px;
+    padding: 0.85rem 1.1rem;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.08rem;
+    line-height: 1.65;
+    color: var(--vo-ink);
+    margin: 0;
+  }
+  .note {
+    margin: 0.75rem 0 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .note strong { color: var(--ink); }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 2.5rem 0 0.75rem;
+  }
+  .footer-notes {
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+  .footer-notes ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+  .footer-notes li { margin: 0.3rem 0; }
+  .locked {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    font-size: 0.9rem;
+    margin: 1rem 0 0;
+  }
+  .locked p { margin: 0.3rem 0; }
+</style>
+
+<main>
+  <p class="eyebrow">FileThat video scripts · Tier 2 · Video 7 of 9</p>
+  <h1>Income &amp; Expenditure Ledger</h1>
+  <div class="meta">
+    <span>Target 1:00</span>
+    <span>VO ≈ 134 words</span>
+    <span>The how-to video</span>
+    <span>British English</span>
+  </div>
+  <p class="brief">
+    <strong>The brief:</strong> free ledger basics — add income and expenses, watch the running
+    totals. This is the sibling of Video 15: that one is the <em>use case</em> (export, hand to
+    your accountant, 30 seconds); this one is the <em>how-to</em> (a minute of actually keeping
+    the books). The centrepiece is adding an entry live on camera. Audience is
+    <strong>non-tax-savvy</strong>; warm, practical, zero jargon — bookkeeping for people who'd
+    rather be working.
+  </p>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:00–0:12</span>
+      <span class="beat-title">The hook — books that keep themselves tidy</span>
+      <span class="beat-pace">28 words · ~12s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Open on the <strong>Income &amp; Expenditure</strong> ledger, already full of the
+        quarter's entries, the three tiles in frame: income <strong>£15,750.00</strong>,
+        expenses <strong>£6,621.14</strong>, net <strong>£9,128.86</strong>. Caption:
+        <em>"Money in. Money out. Sorted."</em>
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Money in, money out, and totals that keep themselves up to date — this is the Income
+        and Expenditure ledger, the simplest way to keep your books in FileThat.
+      </p>
+      <p class="note"><strong>Footage note:</strong> load <strong>demo scene 16</strong> before
+      recording — 27 entries land the tiles on exactly these figures. Frame the hook on the
+      tiles and entries, not the blue notice at the top of the page (it carries a price line
+      the script deliberately doesn't voice).</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:12–0:27</span>
+      <span class="beat-title">Add an entry — the live moment</span>
+      <span class="beat-pace">32 words · ~13s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Press <strong>Add Expense</strong> → the Add Entry form, filled in real time:
+        <ul>
+          <li>type already on <strong>Expense</strong>, today's date</li>
+          <li>description <strong>Diesel top-up — Shell</strong></li>
+          <li>category <strong>Fuel &amp; Travel</strong>, amount <strong>£38.60</strong></li>
+          <li>tick <strong>Cash transaction</strong> → <strong>Save</strong></li>
+        </ul>
+        The new row appears and the expenses tile ticks up.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Adding one takes seconds. Income or expense, the date, what it was, a category, the
+        amount. Paid cash? Tick the box. Save — and the totals update right in front of you.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:27–0:39</span>
+      <span class="beat-title">The helpful extras — repeats and receipts</span>
+      <span class="beat-pace">28 words · ~12s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Open <strong>Add Entry</strong> once more and dwell on two fields:
+        <strong>"Repeat this entry"</strong> (the helper text notes future entries are
+        pre-created automatically) and the <strong>receipt attachment</strong>. Close without
+        saving.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Regular bills, like the phone contract, can repeat automatically — set them once. And
+        you can attach the receipt to any entry, so the paperwork lives with the number.
+      </p>
+      <p class="note"><strong>Footage note:</strong> the staged entries carry no repeat or
+      receipt chips — show these two features inside the Add Entry form, don't point at the
+      seeded rows.</p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:39–0:52</span>
+      <span class="beat-title">Running totals — any period you like</span>
+      <span class="beat-pace">31 words · ~13s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        The <strong>From / To</strong> date range → press <strong>Reset to tax year</strong> —
+        the tiles recompute. A slow scroll down the entries, category chips visible.
+        Brief glimpse of the <strong>Export</strong> button — don't press it.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        Pick any date range — a month, a quarter, the whole tax year — and the totals follow.
+        And when someone needs your books, one export hands them over. There's a video just
+        for that.
+      </p>
+    </div>
+  </section>
+
+  <section class="beat">
+    <div class="beat-head">
+      <span class="beat-time">0:52–1:00</span>
+      <span class="beat-title">Close — simple books, kept properly</span>
+      <span class="beat-pace">15 words · ~7s</span>
+    </div>
+    <div class="beat-body">
+      <p class="label">On screen</p>
+      <div class="screen">
+        Caption: <em>"Simple books, kept properly."</em> End card: FileThat logo +
+        <strong>filethat.co.uk</strong>.
+      </div>
+      <p class="label">Voiceover</p>
+      <p class="vo">
+        No spreadsheets, no formulas — and keeping your records is free. Simple books, kept
+        properly.
+      </p>
+    </div>
+  </section>
+
+  <h2>Fixed claims — please don't paraphrase these</h2>
+  <div class="locked">
+    <p>· If any cut mentions HMRC, use Video 15's exact line — "The ledger works on its own — no HMRC submissions needed" — and nothing else. Never imply the ledger feeds quarterly updates; that's the separate Digital Records section, and don't call these entries "digital records".</p>
+    <p>· "keeping your records is free" — the only price line allowed, lifted exactly from Video 1. Don't voice the on-screen export price.</p>
+    <p>· "Paid cash? Tick the box." — keep it at that. No advice about how cash income is taxed or declared.</p>
+  </div>
+
+  <h2>Practicalities</h2>
+  <div class="footer-notes">
+    <ul>
+      <li>1080p minimum, 16:9, MP4. Clean voiceover mix; VO as a separate stem if possible; SRT captions appreciated.</li>
+      <li>Total VO ≈ 134 words — lands just under 1:00 at a relaxed pace (~2.4 words per second).</li>
+      <li>All demo screens and data will be staged and recorded by me before the session; the ledger entries are the same staged dataset as Video 15 — shoot 15's scroll-and-export first, then this video's live add (the £38.60 diesel entry nudges the tiles to £6,659.74 expenses / £9,090.26 net for the rest of the session; reloading the scene restores the canonical figures).</li>
+    </ul>
+  </div>
+</main>
